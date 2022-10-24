@@ -1,0 +1,7 @@
+@media screen {
+    .dropdown:hover .dropdown-menu,
+    .btn-group:hover .dropdown-menu {
+      display: block;
+    }
+  }
+  

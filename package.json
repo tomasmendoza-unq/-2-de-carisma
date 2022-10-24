@@ -1,0 +1,19 @@
+{
+  "name": "aplicaciones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leopoldo109/-2-de-carisma.git"
+  },
+  "author": "leopoldo y markousu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leopoldo109/-2-de-carisma/issues"
+  },
+  "homepage": "https://github.com/leopoldo109/-2-de-carisma#readme"
+}

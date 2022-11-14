@@ -1,7 +1,10 @@
+body {
+  background-color: rgb(70, 70, 70);
+}
+
 @media screen {
     .dropdown:hover .dropdown-menu,
     .btn-group:hover .dropdown-menu {
       display: block;
     }
   }
-  

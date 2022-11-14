@@ -4,14 +4,6 @@ const container= document.querySelector('.container')
 let limite = 9;
 let distancia = 0;
 
-// fetchweapons
-
-// fetch("https://api.open5e.com/weapons")
-//     .then((res) => res.json())
-//     .then((data) => {
-//         console.log(data)
-//     });
-
 function fetchfor(distancia, limite) {
     for (let i = distancia; i <= distancia + limite; i++) {
         fetchClases(i);

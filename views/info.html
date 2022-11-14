@@ -56,37 +56,35 @@
           </div>
       </nav>
       <!-- contend -->
-      <div class="container bg-dark mt-5 p-4">
-
-      <!--    filtro      -->
-      <form id="form">
-        <select class="form-select" id="spellcasting">
-          <option selected>Filtrar por spellcasting ability </option>
-          <option value="charisma">Carisma</option>
-          <option value="Wisdom">Sabiduria</option>
-          <option value="Intelligence">Inteligencia</option>
-        </select>
-        <button>Filtrar</button>
-      </form>
-
-        <div class="row">
-
+        <div class="container bg-dark mt-5 p-4">
+        <!--  spinner   -->
+            <div class="spinner d-flex justify-content-center">
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            </div>
+            <div class="row text-light">
+                <div class="col-1">
+                    <img src="" alt="" class="float-start">
+                </div>
+                <div class="col-3">
+                  <h5>CLase</h5>
+                </div>
+                <div class="col-3">
+                  <h5>descripcion</h5>
+                </div>
+                <div class="col-4">
+                  <h5>equipamiento</h5>
+                </div>
+            </div>
         </div>
 
-        <div class="spinner d-flex justify-content-center">
-          <div class="spinner-border text-light" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>
+        <!-- scripts -->
+        <script src="../public/src/js/info.js"></script>
 
-      </div>
-
-      <!-- scripts -->
-      <script src="../public/src/js/main.js"></script>
-
-      <!-- boostrap script -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+        <!-- boostrap script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </body>
 </html>
 <!-- 
   repositorio

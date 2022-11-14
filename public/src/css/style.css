@@ -1,7 +1,132 @@
+body{
+  background-color: gray;
+}
+
 @media screen {
     .dropdown:hover .dropdown-menu,
     .btn-group:hover .dropdown-menu {
       display: block;
     }
-  }
+}
   
+.card{
+  width: 300px;
+}
+
+.Barbarian{
+  background-color: #C3361B;
+  border: none;
+}
+
+.Barbarian:hover{
+  background-color: #7e2210;
+  border: none;
+}
+
+.Bard{
+  background-color: #A11AA6;
+  border: none;
+}
+
+.Bard:hover{
+  background-color: #4f0f51;
+  border: none;
+}
+
+.Cleric{
+  background-color: #6194CB;
+  border: none;
+}
+
+.CLeric:hover{
+  background-color: #2d4661;
+  border: none;
+}
+
+.Druid{
+  background-color: #6d9015;
+  border: none;
+}
+
+.Druid:hover{
+  background-color: #567210;
+  border: none;
+}
+
+.Fighter{
+  background-color: #ba6f29;
+  border: none;
+}
+
+.Fighter:hover{
+  background-color: #965b24;
+  border: none;
+}
+
+.Paladin{
+  background-color: #af6f1b;
+  border:none;
+}
+
+.Paladin:hover{
+  background-color: #8b5917;
+  border: none;
+}
+
+.Ranger{
+  background-color: #439742;
+  border: none;
+}
+
+.Ranger:hover{
+  background-color: #357434;
+  border: none;
+}
+
+.Rouge{
+  background-color: #697e8f;
+  border: none;
+}
+
+.Rouge:hover{
+  background-color: #5a6e81;
+  border: none;
+}
+
+.Wizard{
+  background-color: #2475b7 ;
+  border: none;
+}
+
+.Wizard:hover{
+  background-color:#174e7a ;
+  border: none;
+}
+
+.Sorcerer{
+  background-color: #cb5f02;
+  border: none;
+}
+
+.Sorcerer:hover{
+  background-color: #7f3c02;
+  border: none;
+}
+
+.Warlock{
+  background-color: #860866;
+  border: none;
+}
+
+.Warlock:hover{
+  background-color: #590544;
+  border: none;
+}
+
+.Monk{
+  background-color: #136F9C ;
+}
+
+.Monk:hover{
+  background-color: #0c4967 ;
+}

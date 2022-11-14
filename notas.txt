@@ -1,0 +1,5 @@
+cosas para hacer:
+
+-filtrador por categoria
+
+- paginacion

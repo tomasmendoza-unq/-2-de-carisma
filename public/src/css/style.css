@@ -49,6 +49,10 @@ body {
 
 /* Clases */
 
+.clases {
+  background-color: #837d7d1f;
+}
+
 .Barbarian {
   background-color: #c3361b;
   border: none;
@@ -74,7 +78,7 @@ body {
   border: none;
 }
 
-.CLeric:hover {
+.Cleric:hover {
   background-color: #2d4661;
   border: none;
 }

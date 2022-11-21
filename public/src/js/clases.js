@@ -50,7 +50,7 @@ function dibujarCard(data, imagenes, id) {
   );
 
   const card = document.createElement("div");
-  card.classList.add("card", "bg-secondary", "bg-gradient", "text-light");
+  card.classList.add("card", "clases", "text-light");
   card.style.width = "300px";
 
   const cardBody = document.createElement("div");

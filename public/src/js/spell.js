@@ -1,71 +1,63 @@
 const container = document.querySelector(".spells");
 const spinner = document.querySelector(".spinner");
-const pagination = document.querySelector(".pagination");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 const filtro = document.querySelector("#filtro");
 
-let limit = 8;
-let offset = 0;
+let page = 1;
 
-filtro.addEventListener("click", () => {
-  removeChildNodes(container);
-  fetchSpells(offset, limit);
-});
-
+// Botón para retroceder el listado
 previous.addEventListener("click", () => {
-  if (offset != 1) {
-    offset -= 9;
+  if (page !== 1) {
+    spinner.classList.remove("d-none");
     removeChildNodes(container);
-    fetchSpells(offset, limit);
+    page--;
+    fetchSpell(page);
   }
 });
 
+// Botón para avanzar el listado
 next.addEventListener("click", () => {
-  offset += 9;
+  spinner.classList.remove("d-none");
   removeChildNodes(container);
-  fetchSpells(offset, limit);
+  page++;
+  fetchSpell(page);
 });
 
+// Botón para aplicar los filtros
+filtro.addEventListener("click", () => {
+  spinner.classList.remove("d-none");
+  removeChildNodes(container)
+  fetchSpell(page);
+});
 
-function fetchSpell(id) {
+function fetchSpell(pageNumber) {
   let spellName = document.getElementById("name-spell").value;
   let spellLevel = document.getElementById("spell-level").value;
   let spellSchool = document.getElementById("spell-school").value;
   let spellClass = document.getElementById("spell-class").value;
-
+  
+  let enlace = `https://api.open5e.com/spells/?limit=9&page=${pageNumber}`
   
   if (spellName !== "") {
-    fetch(`https://api.open5e.com/spells/?search=${spellName}`)
-    .then((res) => res.json())
-    .then((data) => {
-      
-      console.log(data.results[id])
-      crearSpell(data.results[id]);
-      spinner.classList.add("d-none");
-    });
+    enlaceFinal = enlace + `&search=${spellName}`;
   }
   else {
-    fetch(`https://api.open5e.com/spells/?name__iexact=${spellName}&level_int__iexact=${spellLevel}&school__iexact=${spellSchool}&dnd_class__icontains=${spellClass}`)
+    enlaceFinal = enlace + `&level_int__iexact=${spellLevel}&school__iexact=${spellSchool}&dnd_class__icontains=${spellClass}`;
+  }
+
+  fetch(enlaceFinal)
     .then((res) => res.json())
     .then((data) => {
-
-      crearSpell(data.results[id]);
-      
-      spinner.classList.add("d-none");
+      for(let i=0; i < data.results.length; i++) {
+        crearSpell(data.results[i])
+        spinner.classList.add("d-none");
+      }
     });
-  }
 }
 
-function fetchSpells(offset, limit) {
-  spinner.classList.remove("d-none");
-  for (let i = offset; i <= offset + limit; i++) {
-    fetchSpell(i);
-  }
-}
-
+// Función para crear las tarjetas con los nombres del conjuro
 function crearSpell(data) {
-
   const row = document.querySelector(".spells");
 
   const col = document.createElement("div");
@@ -85,7 +77,7 @@ function crearSpell(data) {
   name.classList.add("fs-6");
   name.textContent = `${data.name}`;
 
-  row.appendChild(col)
+  row.appendChild(col);
   col.appendChild(card);
   card.appendChild(cardBody);
   cardBody.appendChild(name);
@@ -97,4 +89,4 @@ function removeChildNodes(parent) {
   }
 }
 
-fetchSpells(offset, limit);
+fetchSpell(page)

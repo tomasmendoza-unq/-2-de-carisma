@@ -41,6 +41,12 @@ body {
   text-decoration: underline;
 }
 
+/* spells */
+
+.bg {
+  background-color: #0c4967;
+}
+
 /* Clases */
 
 .Barbarian {

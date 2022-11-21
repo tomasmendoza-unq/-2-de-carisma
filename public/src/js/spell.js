@@ -60,11 +60,17 @@ function fetchSpell(pageNumber) {
 function crearSpell(data) {
   const row = document.querySelector(".spells");
 
+  // Columnas
   const col = document.createElement("div");
   col.classList.add("col-12");
   col.classList.add("col-md-6");
   col.classList.add("col-lg-4");
   col.classList.add("mt-2");
+
+  // Link hacía la info de cada conjuro
+  const a = document.createElement("a");
+  a.href = "#";
+  a.classList.add("text-decoration-none", "link-light");
 
   const card = document.createElement("div");
   card.classList.add("card");
@@ -78,7 +84,8 @@ function crearSpell(data) {
   name.textContent = `${data.name}`;
 
   row.appendChild(col);
-  col.appendChild(card);
+  col.appendChild(a);
+  a.appendChild(card)
   card.appendChild(cardBody);
   cardBody.appendChild(name);
 }

@@ -55,7 +55,7 @@ function col1(data, imagen) {
   desc.innerText = imagen.desc;
 
   let hit = document.createElement("p");
-  hit.innerText = `Puntos de golpe: ${data.hit_dice}`;
+  hit.innerText = `Dado de golpe: ${data.hit_dice}`;
 
   let img = document.createElement("img");
   img.classList.add("img-fluid", "mx-auto", "d-block");

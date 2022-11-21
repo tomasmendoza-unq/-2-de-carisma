@@ -73,7 +73,7 @@ function dibujarCard(data, imagenes, id) {
   btn.setAttribute("data-id", id);
 
   const a = document.createElement("a");
-  a.setAttribute("href", "info.html");
+  a.setAttribute("href", "clases-info.html");
 
   row.appendChild(col);
   col.appendChild(card);

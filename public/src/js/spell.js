@@ -27,7 +27,7 @@ next.addEventListener("click", () => {
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
   spinner.classList.remove("d-none");
-  removeChildNodes(container)
+  removeChildNodes(container);
   fetchSpell(page);
 });
 
@@ -36,21 +36,22 @@ function fetchSpell(pageNumber) {
   let spellLevel = document.getElementById("spell-level").value;
   let spellSchool = document.getElementById("spell-school").value;
   let spellClass = document.getElementById("spell-class").value;
-  
-  let enlace = `https://api.open5e.com/spells/?limit=9&page=${pageNumber}`
-  
+
+  let enlace = `https://api.open5e.com/spells/?limit=9&page=${pageNumber}`;
+
   if (spellName !== "") {
     enlaceFinal = enlace + `&search=${spellName}`;
-  }
-  else {
-    enlaceFinal = enlace + `&level_int__iexact=${spellLevel}&school__iexact=${spellSchool}&dnd_class__icontains=${spellClass}`;
+  } else {
+    enlaceFinal =
+      enlace +
+      `&level_int__iexact=${spellLevel}&school__iexact=${spellSchool}&dnd_class__icontains=${spellClass}`;
   }
 
   fetch(enlaceFinal)
     .then((res) => res.json())
     .then((data) => {
-      for(let i=0; i < data.results.length; i++) {
-        crearSpell(data.results[i])
+      for (let i = 0; i < data.results.length; i++) {
+        crearSpell(data.results[i]);
         spinner.classList.add("d-none");
       }
     });
@@ -69,11 +70,12 @@ function crearSpell(data) {
 
   // Link hacía la info de cada conjuro
   const a = document.createElement("a");
-  a.href = "#";
-  a.classList.add("text-decoration-none", "link-light");
+  a.classList.add("text-decoration-none", "link-light", "spell");
+  a.setAttribute("href", "spell-info.html");
 
   const card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("data-slug", data.slug);
 
   const cardBody = document.createElement("div");
   card.classList.add("card-body", "bg");
@@ -82,12 +84,34 @@ function crearSpell(data) {
   name.classList.add("card-text");
   name.classList.add("fs-6");
   name.textContent = `${data.name}`;
+  name.setAttribute("data-slug", data.slug);
 
   row.appendChild(col);
   col.appendChild(a);
-  a.appendChild(card)
+  a.appendChild(card);
   card.appendChild(cardBody);
   cardBody.appendChild(name);
+
+  info();
+}
+
+function info() {
+  spellInfo = document.querySelectorAll(".spell");
+  spellInfo.forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+      if (localStorage.slug) {
+        localStorage.setItem(
+          "slug",
+          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+        );
+      } else {
+        localStorage.setItem(
+          "slug",
+          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+        );
+      }
+    });
+  });
 }
 
 function removeChildNodes(parent) {
@@ -96,4 +120,4 @@ function removeChildNodes(parent) {
   }
 }
 
-fetchSpell(page)
+fetchSpell(page);

@@ -70,7 +70,7 @@ function crearSpell(data) {
   card.classList.add("card");
 
   const cardBody = document.createElement("div");
-  card.classList.add("card-body");
+  card.classList.add("card-body", "bg");
 
   const name = document.createElement("h1");
   name.classList.add("card-text");

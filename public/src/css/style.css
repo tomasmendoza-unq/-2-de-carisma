@@ -1,136 +1,172 @@
 body {
-  background-color: rgb(70, 70, 70);
-}
-
-body{
   background-color: gray;
+  color: #ccccab;
 }
 
 @media screen {
-    .dropdown:hover .dropdown-menu,
-    .btn-group:hover .dropdown-menu {
-      display: block;
-    }
-}
-  
-.card{
-  width: 300px;
+  .dropdown:hover .dropdown-menu,
+  .btn-group:hover .dropdown-menu {
+    display: block;
+  }
 }
 
-.Barbarian{
-  background-color: #C3361B;
+/* index */
+
+.container h4 {
+  text-shadow: 2px 2px #d95f5f;
+}
+
+.img-container {
+  width: 600px;
+}
+
+/* Info */
+
+#collapse {
+  color: #a6a68c;
+  text-decoration: none;
+}
+
+#collapse:hover {
+  color: #cbcb23;
+}
+
+.back a {
+  color: #dbec48;
+  text-decoration: none;
+}
+
+.back a:hover {
+  color: #b5c33b;
+  text-decoration: underline;
+}
+
+/* spells */
+
+.bg {
+  background-color: #0c4967;
+}
+
+/* Clases */
+
+.clases {
+  background-color: #837d7d1f;
+}
+
+.Barbarian {
+  background-color: #c3361b;
   border: none;
 }
 
-.Barbarian:hover{
+.Barbarian:hover {
   background-color: #7e2210;
   border: none;
 }
 
-.Bard{
-  background-color: #A11AA6;
+.Bard {
+  background-color: #a11aa6;
   border: none;
 }
 
-.Bard:hover{
+.Bard:hover {
   background-color: #4f0f51;
   border: none;
 }
 
-.Cleric{
-  background-color: #6194CB;
+.Cleric {
+  background-color: #6194cb;
   border: none;
 }
 
-.CLeric:hover{
+.Cleric:hover {
   background-color: #2d4661;
   border: none;
 }
 
-.Druid{
+.Druid {
   background-color: #6d9015;
   border: none;
 }
 
-.Druid:hover{
+.Druid:hover {
   background-color: #567210;
   border: none;
 }
 
-.Fighter{
+.Fighter {
   background-color: #ba6f29;
   border: none;
 }
 
-.Fighter:hover{
+.Fighter:hover {
   background-color: #965b24;
   border: none;
 }
 
-.Paladin{
+.Paladin {
   background-color: #af6f1b;
-  border:none;
+  border: none;
 }
 
-.Paladin:hover{
+.Paladin:hover {
   background-color: #8b5917;
   border: none;
 }
 
-.Ranger{
+.Ranger {
   background-color: #439742;
   border: none;
 }
 
-.Ranger:hover{
+.Ranger:hover {
   background-color: #357434;
   border: none;
 }
 
-.Rouge{
-  background-color: #697e8f;
+.Rogue {
+  background-color: #41505c;
   border: none;
 }
 
-.Rouge:hover{
+.Rogue:hover {
   background-color: #5a6e81;
   border: none;
 }
 
-.Wizard{
-  background-color: #2475b7 ;
+.Wizard {
+  background-color: #2475b7;
   border: none;
 }
 
-.Wizard:hover{
-  background-color:#174e7a ;
+.Wizard:hover {
+  background-color: #174e7a;
   border: none;
 }
 
-.Sorcerer{
+.Sorcerer {
   background-color: #cb5f02;
   border: none;
 }
 
-.Sorcerer:hover{
+.Sorcerer:hover {
   background-color: #7f3c02;
   border: none;
 }
 
-.Warlock{
+.Warlock {
   background-color: #860866;
   border: none;
 }
 
-.Warlock:hover{
+.Warlock:hover {
   background-color: #590544;
   border: none;
 }
 
-.Monk{
-  background-color: #136F9C ;
+.Monk {
+  background-color: #136f9c;
 }
 
-.Monk:hover{
-  background-color: #0c4967 ;
+.Monk:hover {
+  background-color: #0c4967;
 }

@@ -2,51 +2,63 @@
     "result": [
         {
             "id":0, 
-            "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizkKOYQ9ES_L1TAYWLtZxXlrcaRlk-v9Zaw&usqp=CAU"
+            "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizkKOYQ9ES_L1TAYWLtZxXlrcaRlk-v9Zaw&usqp=CAU",
+            "desc": "Para algunos, su rabia brota de la comunión con espíritus de animales salvajes. Otros recurren a su hirviente reserva de ira frente a un mundo lleno de dolor. Para los bárbaros, la furia es un poder que no sólo les proporciona un frenesí ciego en la batalla, sino también extraordinarios reflejos, resistencia y proezas de fuerza."
         }, 
         {
             "id":1, 
-            "url":"https://s3-eu-west-2.amazonaws.com/dungeon20/images/551/original-203f4e445dd26dc9e8526220fdc0d1c3f528fae2.jpg?1536945543"
+            "url":"https://s3-eu-west-2.amazonaws.com/dungeon20/images/551/original-203f4e445dd26dc9e8526220fdc0d1c3f528fae2.jpg?1536945543",
+            "desc": "Ya sea un erudito, un poeta o un canalla, un bardo teje su magia a través de sus palabras y su música para inspirar a los aliados, desmoralizar a los enemigos, manipular mentes, crear ilusiones e incluso sanar heridas."
         },
         {
             "id": 2, 
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/555/original-f3d9b208beafb6d54a2424915827929b310f1d27.jpg?1536945807"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/555/original-f3d9b208beafb6d54a2424915827929b310f1d27.jpg?1536945807",
+            "desc": "Los clérigos son intermediarios entre el mundo mortal y los distantes planos divinos. Tan diferentes entre ellos como los dioses a los que sirven, los clérigos se esfuerzan por personificar las obras de sus deidades. No son sacerdotes ordinarios, un clérigo se encuentra imbuido de magia divina."
         },
         {
             "id": 3, 
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/557/original-3d41a18380868593798c43305666146f987013f7.jpg?1536945861"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/557/original-3d41a18380868593798c43305666146f987013f7.jpg?1536945861",
+            "desc": "Ya sea invocando a las fuerzas elementales o emulando a las criaturas del mundo animal, los druidas son la personificación de la resistencia, astucia y furia de la naturaleza. Dicen no tener un dominio sobre la naturaleza. En lugar de eso, se ven como una extensión de la voluntad indomable de la misma."
         },
         {
             "id": 4,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/561/original-48fbcc04869d075a662423806da1cd5519232d59.jpg?1536946156"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/561/original-48fbcc04869d075a662423806da1cd5519232d59.jpg?1536946156",
+            "desc": "Todos los guerreros comparten un dominio magistral de las armas y armaduras, y un exhaustivo conocimiento de las habilidades del combate. Además, están muy relacionados con la muerte, tanto repartiéndola como mirándola fijamente, desafiantes."
         },
         {
             "id":5,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/567/medium-6bfa53eb5a3fbe8fe338f9920e9ff4c5fe62b471.jpg?1536946589"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/567/medium-6bfa53eb5a3fbe8fe338f9920e9ff4c5fe62b471.jpg?1536946589",
+            "desc": "Cualquiera que sea su disciplina, los monjes están unidos por su habilidad para utilizar mágicamente la energía que corre por sus cuerpos. Ya sea canalizada en una impactante demostración de proeza marcial o en el sutil enfoque en la habilidad defensiva y la velocidad, esta energía impulsa todo lo que el monje hace."
         },
         {
             "id": 6,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/569/original-5df3c570f96308f200cb0fe844c50f6d02907a3f.jpg?1536946685"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/569/original-5df3c570f96308f200cb0fe844c50f6d02907a3f.jpg?1536946685",
+            "desc": "Sean cuales sean sus orígenes y sus misiones, los paladines están unidos por sus juramentos para luchar en contra de las fuerzas del mal. El juramento de un paladín es un lazo muy poderoso. Es una fuente de poder que convierte a un devoto guerrero en un campeón bendecido."
         },
         {
             "id": 7,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/559/original-48605cfc16d3e89da8071c756ece23ca47a2b61c.jpg?1536945924"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/559/original-48605cfc16d3e89da8071c756ece23ca47a2b61c.jpg?1536945924",
+            "desc": "Lejos del bullicio de las ciudades y pueblos, más allá de las defensas que mantienen a las granjas más lejanas protegidas de los terrores de la naturaleza, en medio de tupidos bosques sin caminos y a través de enormes y vacías llanuras, los exploradores mantienen su interminable guardia."
         },
         {
             "id": 8,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/571/original-06e592455f1e3d209236e116ce279d7375e37721.jpg?1536946787"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/571/original-06e592455f1e3d209236e116ce279d7375e37721.jpg?1536946787",
+            "desc": "Los pícaros confían sus habilidades, el sigilo y las vulnerabilidades de sus oponentes para lograr sacar ventaja en cualquier situación. Tienen un don para encontrar la solución a prácticamente cualquier problema, demostrando un ingenio y versatilidad, que es la piedra angular de cualquier buen grupo de aventureros"
         },
         {
             "id": 9,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/563/medium-192194674081b744438594825df5c1fe2dd2fa7d.jpg?1536946280"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/563/medium-192194674081b744438594825df5c1fe2dd2fa7d.jpg?1536946280",
+            "desc": "Los hechiceros tienen una magia innata, conferida por una línea de sangre exótica, una influencia de otro mundo o la exposición a fuerzas cósmicas desconocidas. Uno no puede estudiar hechicería como quien estudia un lenguaje, más de lo que uno puede aprender a vivir una vida legendaria. Nadie elige la hechicería, el poder elige al hechicero."
         },
         {
             "id": 10,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/553/medium-be729b61b7536c43a069e97d018a2a02a78bb29d.jpg?1536945713"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/553/medium-be729b61b7536c43a069e97d018a2a02a78bb29d.jpg?1536945713",
+            "desc": "Los brujos son buscadores del conocimiento que se encuentra escondido en el multiverso. A través de pactos hechos con seres poderosos de poder sobrenatural, los brujos desatan efectos mágicos tanto sutiles como espectaculares y recolectan secretos arcanos para potenciar su propio poder."
         },
         {
             "id": 11,
-            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/565/medium-47223096f79c5e30e812ea2747adc7de8f34f2c7.jpg?1536946435"
+            "url": "https://s3-eu-west-2.amazonaws.com/dungeon20/images/565/medium-47223096f79c5e30e812ea2747adc7de8f34f2c7.jpg?1536946435",
+            "desc": "Los magos son los practicantes supremos de la magia, definidos y unidos como una clase por los hechizos que conjuran. A partir de la sutil onda de la magia que impregna el cosmos, los magos lanzan explosivos hechizos de fuego, arcos voltaicos, sutiles engaños y brutales formas de control mental."
         }
     ]
 }

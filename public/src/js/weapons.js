@@ -86,7 +86,7 @@ function crearArma(data) {
 
   // Link hacía la info de cada arma
   const a = document.createElement("a");
-  a.classList.add("text-decoration-none", "link-light", "weapon");
+  a.classList.add("text-decoration-none", "link-dark", "weapon");
   a.setAttribute("href", "weapons-info.html");
 
   const card = document.createElement("div");
@@ -94,7 +94,7 @@ function crearArma(data) {
   card.setAttribute("data-slug", data.slug);
 
   const cardBody = document.createElement("div");
-  card.classList.add("card-body", "bg");
+  card.classList.add("card-body", "btn", "btn-light");
 
   const name = document.createElement("h1");
   name.classList.add("card-text");

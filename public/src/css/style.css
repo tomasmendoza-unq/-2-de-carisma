@@ -26,8 +26,6 @@ body {
   background-color: rgb(49, 49, 49);
   border: 5px rgb(77, 77, 77) solid;
   padding: 10px 30px 0;
-  display: flex;
-  justify-content: center;
 }
 
 .cuadro:hover {
@@ -54,16 +52,6 @@ body {
 .back a:hover {
   color: #b5c33b;
   text-decoration: underline;
-}
-
-/* spells */
-
-.bg {
-  background-color: #11638b;
-}
-
-.bg:hover {
-  background-color: #10597e;
 }
 
 /* Clases */

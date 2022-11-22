@@ -63,14 +63,11 @@ function crearSpell(data) {
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12");
-  col.classList.add("col-md-6");
-  col.classList.add("col-lg-4");
-  col.classList.add("mt-2");
+  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
 
   // Link hacía la info de cada conjuro
   const a = document.createElement("a");
-  a.classList.add("text-decoration-none", "link-light", "spell");
+  a.classList.add("text-decoration-none", "link-dark", "spell");
   a.setAttribute("href", "spell-info.html");
 
   const card = document.createElement("div");
@@ -78,7 +75,7 @@ function crearSpell(data) {
   card.setAttribute("data-slug", data.slug);
 
   const cardBody = document.createElement("div");
-  card.classList.add("card-body", "bg");
+  card.classList.add("card-body", "btn", "btn-light");
 
   const name = document.createElement("h1");
   name.classList.add("card-text");

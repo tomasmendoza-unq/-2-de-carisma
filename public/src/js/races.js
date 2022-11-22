@@ -1,20 +1,11 @@
-let limite = 8;
-let distancia = 0;
-let spellCasting = document.getElementById("spellcasting");
-const form = document.getElementById("form");
-
-function fetchfor(distancia, limite) {
-  for (let i = distancia; i <= distancia + limite; i++) {
-    fetchRaces(i);
-  }
-}
-
-function fetchRaces(id) {
+function fetchRaces() {
   fetch(`https://api.open5e.com/races/`)
     .then((res) => res.json())
     .then((data) => {
       document.querySelector(".spinner").classList.add("d-none");
-      dibujarCard(data.results[id], id);
+      for(let i=0; i < data.results.length; i++){
+        dibujarCard(data.results[i], i);
+      }
     });
 }
 
@@ -30,13 +21,16 @@ function dibujarCard(data, id) {
     "d-flex",
     "justify-content-center"
   );
-
+  const a = document.createElement("a");
+  a.classList.add("text-decoration-none", "link-light", "races");
+  a.setAttribute("href", "races-info.html");
+  
   const card = document.createElement("div");
-  card.classList.add("card", "clases", "text-light");
+  card.classList.add("card", "clases");
   card.style.width = "300px";
 
   const cardBody = document.createElement("div");
-  cardBody.classList.add("card-body");
+  cardBody.classList.add("card-body", "btn");
   cardBody.setAttribute("data-slug", data.name);
 
   const name = document.createElement("h5");
@@ -44,9 +38,7 @@ function dibujarCard(data, id) {
   name.textContent = `${data.name}`;
   name.setAttribute("data-slug", data.name);
 
-  const a = document.createElement("a");
-  a.classList.add("text-decoration-none", "link-light", "races");
-  a.setAttribute("href", "races-info.html");
+  
 
   row.appendChild(col);
   col.appendChild(a);
@@ -76,4 +68,4 @@ function info() {
   });
 }
 
-fetchfor(distancia, limite);
+fetchRaces();

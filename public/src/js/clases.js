@@ -1,5 +1,3 @@
-let limite = 11;
-let distancia = 0;
 let imagenes;
 let spellCasting = document.getElementById("spellcasting");
 const form = document.getElementById("form");
@@ -26,13 +24,14 @@ function fetchfor(distancia, limite) {
   }
 }
 
-function fetchClases(id) {
+function fetchClases() {
   fetch(`https://api.open5e.com/classes`)
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data.results)
       document.querySelector(".spinner").classList.add("d-none");
-      dibujarCard(data.results[id], imagenes.result[id], id);
+      for(let i = 0; i < data.results.length; i++){
+        dibujarCard(data.results[i], imagenes.result[i], i);
+      }
     });
 }
 
@@ -99,4 +98,4 @@ function info() {
   });
 }
 
-fetchfor(distancia, limite);
+fetchClases();

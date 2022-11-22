@@ -70,6 +70,58 @@ function races(data) {
   row.appendChild(col2);
   col2.appendChild(desc);
   col2.appendChild(descP);
+
+  let col3 = document.createElement("div");
+  col3.classList.add("col-12", "col-md-6");
+
+  let lenguaje = document.createElement("h6");
+  lenguaje.innerText = "Lenguaje";
+
+  let lenguajeP = document.createElement("p");
+  lenguajeP.innerText = data.languages;
+
+  row.appendChild(col3);
+  col3.appendChild(lenguaje);
+  col3.appendChild(lenguajeP);
+
+  let col4 = document.createElement("div");
+  col4.classList.add("col-12", "col-md-6");
+
+  let tamaño = document.createElement("h6");
+  tamaño.innerText = "Tamaño";
+
+  let tamañoP = document.createElement("p");
+  tamañoP.innerText = data.size;
+
+  row.appendChild(col4);
+  col4.appendChild(tamaño);
+  col4.appendChild(tamañoP);
+
+  let col5 = document.createElement("div");
+  col5.classList.add("col-12", "col-md-6");
+
+  let velocidad = document.createElement("h6");
+  velocidad.innerText = "Velocidad";
+
+  let velocidadP = document.createElement("p");
+  velocidadP.innerText = data.speed_desc;
+
+  row.appendChild(col5);
+  col5.appendChild(velocidad);
+  col5.appendChild(velocidadP);
+
+  let col6 = document.createElement("div");
+  col6.classList.add("col-12", "col-md-6");
+
+  let habilidad = document.createElement("h6");
+  habilidad.innerText = "Atributo";
+
+  let habilidadP = document.createElement("p");
+  habilidadP.innerText = data.asi_desc;
+
+  row.appendChild(col6);
+  col6.appendChild(habilidad);
+  col6.appendChild(habilidadP);
 }
 
 fetchRaces();

@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conjuros -2 de carisma</title>
+    <title>Armas -2 de carisma</title>
+
     <!-- icono -->
     <link
       rel="shortcut icon"
-      href="../public/src/img/48cb5349f515f6e59edc2a4de294f439.png"
+      href="../public/src/img/favicon.ico"
       type="image/x-icon"
     />
+
     <!-- boostrap min css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -18,10 +20,10 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <!-- Estilo -->
+
+    <!-- css style  -->
     <link rel="stylesheet" href="../public/src/css/style.css" />
   </head>
-
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -73,73 +75,30 @@
       <div class="row">
         <div class="col-12 col-md-3">
           <div class="input-group mb-3">
-            <span class="input-group-text" id="spell-name">Nombre</span>
+            <span class="input-group-text" id="weapon-name">Nombre</span>
             <input
               type="text"
               class="form-control"
               aria-label="Username"
-              aria-describedby="spell-name"
-              id="name-spell"
+              aria-describedby="weapon-name"
+              id="name-weapon"
             />
           </div>
         </div>
-        <!-- Nivel de conjuro -->
+        <!-- Tipo nombre -->
         <div class="col-12 col-md-3">
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            id="spell-level"
-          >
-            <option value="" selected>Nivel de conjuro</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-          </select>
+          <button class="btn btn-light filtro-name">Ordenar por nombre</button>
         </div>
-        <!-- Escuela del conjuro -->
+        <!-- Tipo del arma -->
         <div class="col-12 col-md-3">
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            id="spell-school"
-          >
-            <option value="" selected>Escuela de conjuro</option>
-            <option value="abjuration">Abjuración</option>
-            <option value="divination">Adivinación</option>
-            <option value="conjuration">Conjuración</option>
-            <option value="enchantment">Encantamiento</option>
-            <option value="evocation">Evocación</option>
-            <option value="ilusion">Ilusión</option>
-            <option value="necromancy">Necromancia</option>
-            <option value="transmutation">Transmutación</option>
-          </select>
+          <button class="btn btn-light filtro-category">Ordenar por categoria</button>
         </div>
+        <!-- Tipo de daño -->
         <div class="col-12 col-md-3">
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            id="spell-class"
-          >
-            <option value="" selected>Clase del conjuro</option>
-            <option value="bard">Bardo</option>
-            <option value="warlock">Brujo</option>
-            <option value="cleric">Clérigo</option>
-            <option value="druid">Druida</option>
-            <option value="ranger">Explorador</option>
-            <option value="sorcerer">Hechicero</option>
-            <option value="wizard">Mago</option>
-            <option value="paladin">Paladín</option>
-          </select>
+          <button class="btn btn-light filtro-type-damage">Ordenar por tipo de daño</button>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit" id="filtro">
+          <button class="btn btn-primary filtro" type="submit">
             Aplicar filtros
           </button>
         </div>
@@ -156,7 +115,7 @@
       </div>
 
       <!-- Conjuros -->
-      <div class="row spells"></div>
+      <div class="row weapons"></div>
 
       <!-- paginación -->
       <nav class="pagination mt-5" aria-label="...">
@@ -218,13 +177,14 @@
       </div>
     </footer>
 
-    <!-- scripts -->
-    <script src="../public/src/js/spell.js"></script>
+    <!-- Scripts -->
+
     <!-- boostrap script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
+    <script src="../public/src/js/weapons.js"></script>
   </body>
 </html>

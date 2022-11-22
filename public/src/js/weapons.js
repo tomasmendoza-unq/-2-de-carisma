@@ -2,7 +2,11 @@ const container = document.querySelector(".weapons");
 const spinner = document.querySelector(".spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
+
 const filtro = document.querySelector(".filtro");
+const filtroName = document.querySelector(".filtro-name");
+const filtroCategory = document.querySelector(".filtro-category");
+const filtroTypeDamage = document.querySelector(".filtro-type-damage");
 
 let page = 1;
 
@@ -26,21 +30,38 @@ next.addEventListener("click", () => {
 
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
-  spinner.classList.remove("d-none");
-  removeChildNodes(container);
-  fetchWeapon(page);
-});
-
-function fetchWeapon(pageNumber) {
   let weaponName = document.getElementById("name-weapon").value;
   
-  let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}`;
+  spinner.classList.remove("d-none");
+  removeChildNodes(container);
+  
+  fetchWeapon(page, `search=${weaponName}`);
+});
 
-  if (weaponName !== "") {
-    enlace += `&search=${weaponName}`;
-  } else {
-    enlaceFinal = enlace;
-  }
+// Botón para ordenar por nombre
+filtroName.addEventListener("click", () => {
+  spinner.classList.remove("d-none");
+  removeChildNodes(container);
+  fetchWeapon(page, "ordering=name");
+});
+
+// Botón para ordenar por categoria
+filtroCategory.addEventListener("click", () => {
+  spinner.classList.remove("d-none");
+  removeChildNodes(container);
+  fetchWeapon(page, "ordering=category");
+});
+
+// Botón para ordenar por tipo de daño 
+filtroTypeDamage.addEventListener("click", () => {
+  spinner.classList.remove("d-none");
+  removeChildNodes(container);
+  fetchWeapon(page, "ordering=damage_type");
+});
+
+function fetchWeapon(pageNumber, strLink) {
+  
+  let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}&${strLink}`;
 
   fetch(enlace)
     .then((res) => res.json())

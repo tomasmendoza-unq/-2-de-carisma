@@ -32,7 +32,7 @@ body {
 
 .cuadro:hover {
   transition: background-color 0.4s;
-  background-color: rgb(19, 19, 19);
+  background-color: rgba(19, 19, 19, 0.935);
 }
 
 /* Info */

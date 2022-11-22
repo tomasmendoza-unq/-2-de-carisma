@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Armas -2 de carisma</title>
+    <title>Monstruo -2 de carisma</title>
 
     <!-- icono -->
     <link
@@ -68,38 +68,27 @@
         </div>
       </div>
     </nav>
-
+    
     <!-- contend -->
     <div class="container bg-dark my-5 p-4">
       <!-- Filtros -->
       <div class="row">
         <div class="col-12 col-md-3 mb-2">
           <div class="input-group mb-3">
-            <span class="input-group-text" id="weapon-name">Nombre</span>
+            <span class="input-group-text" id="spell-name">Nombre</span>
             <input
               type="text"
               class="form-control"
               aria-label="Username"
-              aria-describedby="weapon-name"
-              id="name-weapon"
+              aria-describedby="spell-name"
+              id="name-spell"
             />
           </div>
         </div>
-        <!-- Tipo nombre -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light filtro-name">Ordenar por nombre</button>
-        </div>
-        <!-- Tipo del arma -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light filtro-category">Ordenar por categoria</button>
-        </div>
-        <!-- Tipo de daño -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light filtro-type-damage">Ordenar por tipo de daño</button>
-        </div>
+        
         <div class="col-12">
-          <button class="btn btn-primary filtro" type="submit">
-            Buscar arma
+          <button class="btn btn-primary" type="submit" id="filtro">
+            Aplicar filtros
           </button>
         </div>
       </div>
@@ -114,8 +103,8 @@
         </div>
       </div>
 
-      <!-- Armas -->
-      <div class="row weapons"></div>
+      <!-- Monstruos -->
+      <div class="row monsters"></div>
 
       <!-- paginación -->
       <nav class="pagination mt-5" aria-label="...">
@@ -129,7 +118,7 @@
         </ul>
       </nav>
     </div>
-
+    
     <!-- Footer -->
     <footer class="footer bg-dark text-light mt-5 p-4">
       <div class="row justify-content-center align-items-center">
@@ -208,6 +197,6 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <script src="../public/src/js/weapons.js"></script>
+    <script src="../public/src/js/monsters.js"></script>
   </body>
 </html>

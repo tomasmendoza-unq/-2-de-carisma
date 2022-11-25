@@ -8,7 +8,6 @@ function fetchRaces() {
     .then((data) => {
       document.querySelector(".spinner").classList.add("d-none");
       document.querySelector(".back").classList.remove("d-none");
-      console.log(data.results[0]);
       races(data.results[0]);
     });
 }

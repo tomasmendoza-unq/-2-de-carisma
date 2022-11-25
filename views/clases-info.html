@@ -67,29 +67,48 @@
   </nav>
   
   <!-- contend -->
-  <div class="row gx-1 m-5">
-    <!--  spinner   -->
-    <div class="spinner d-flex justify-content-center">
-      <div class="spinner-border text-light" role="status">
-        <span class="visually-hidden">Loading...</span>
+  <div class="container my-5 mx-auto">
+    <div class="row">
+      <!--  spinner   -->
+      <div class="spinner d-flex justify-content-center">
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
+  
+      <!-- Link para volver al listado -->
+      <div class="col-12 d-none back mb-2 px-0">
+        <a style="color: #dbec48" href="clases.html" class="btn btn-dark">
+          <iconify-icon inline icon="material-symbols:chevron-left"></iconify-icon>Listado
+        </a>
+      </div>
+  
+      <!-- Columna N°1 -->
+      <div class="d-none col-sm-12 col-md-4 me-md-3 bg-dark clase"></div>
+      <!-- Fin columna N°1 -->
+  
+      <!-- Columna N°2 -->
+      <div class="d-none col-sm-12 col-md-7 bg-dark des p-4">
+        <h2 class="fs-4 mb-3">Rasgo de clase</h2>
+        <ul class="nav nav-tabs justify-content-center justify-content-md-between px-4" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tabla-tab" data-bs-toggle="tab" data-bs-target="#tabla-tab-pane" type="button" role="tab" aria-controls="tabla-tab-pane" aria-selected="true">Tabla de niveles</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="descripcion-tab" data-bs-toggle="tab" data-bs-target="#descripcion-tab-pane" type="button" role="tab" aria-controls="descripcion-tab-pane" aria-selected="false">Descripción</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="equipamiento-tab" data-bs-toggle="tab" data-bs-target="#equipamiento-tab-pane" type="button" role="tab" aria-controls="equipamiento-tab-pane" aria-selected="false">Equipamiento</button>
+          </li>
+        </ul>
+        <div class="tab-content text-start" id="myTabContent">
+          <div class="tab-pane fade" id="tabla-tab-pane" role="tabpanel" aria-labelledby="tabla-tab" tabindex="0"></div>
+          <div class="tab-pane fade" id="descripcion-tab-pane" role="tabpanel" aria-labelledby="descripcion-tab" tabindex="0"></div>
+          <div class="tab-pane fade" id="equipamiento-tab-pane" role="tabpanel" aria-labelledby="equipamiento-tab" tabindex="0"></div>
+        </div>
+      </div>
+      <!-- Fin columna N°2 -->
     </div>
-
-    <!-- Link para volver al listado -->
-    <div class="col-12 d-none back mb-2">
-      <a style="color: #dbec48" href="clases.html">
-        <iconify-icon inline icon="material-symbols:chevron-left"></iconify-icon>Listado
-      </a>
-    </div>
-    <!-- Fin link para volver al listado -->
-
-    <!-- Columna N°1 -->
-    <div class="col-sm-12 col-md-6 me-md-3 bg-dark clase"></div>
-    <!-- Fin columna N°1 -->
-
-    <!-- Columna N°2 -->
-    <div class="col-sm-12 col-md-5 mt-3 mt-md-0 bg-dark des"></div>
-    <!-- Fin columna N°2 -->
   </div>
 
   <!-- Footer -->

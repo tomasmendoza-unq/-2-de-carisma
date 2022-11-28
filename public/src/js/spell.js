@@ -2,7 +2,8 @@ const container = document.querySelector(".spells");
 const spinner = document.querySelector(".spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
-const filtro = document.querySelector("#filtro");
+
+const filtro = document.querySelector(".filtro");
 
 let page = 1;
 
@@ -32,10 +33,10 @@ filtro.addEventListener("click", () => {
 });
 
 function fetchSpell(pageNumber) {
-  let spellName = document.getElementById("name-spell").value;
-  let spellLevel = document.getElementById("spell-level").value;
-  let spellSchool = document.getElementById("spell-school").value;
-  let spellClass = document.getElementById("spell-class").value;
+  let spellName = document.querySelector("#name-spell").value;
+  let spellLevel = document.querySelector("#spell-level").value;
+  let spellSchool = document.querySelector("#spell-school").value;
+  let spellClass = document.querySelector("#spell-class").value;
 
   let enlace = `https://api.open5e.com/spells/?limit=9&page=${pageNumber}`;
 

@@ -12,8 +12,9 @@ body {
 
 /* index */
 
-.container h4 {
+.title {
   text-shadow: 2px 2px #d95f5f;
+  font-size: 24px;
 }
 
 .img-container {
@@ -52,6 +53,12 @@ body {
 .back a:hover {
   color: #b5c33b;
   text-decoration: underline;
+}
+
+.vertical-line {
+  height: 100%;
+  width: 3px;
+  background-color: white;
 }
 
 /* Clases */

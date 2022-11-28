@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>-2 de carisma</title>
+    <!-- icono -->
+    <link
+      rel="shortcut icon"
+      href="../public/src/img/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- boostrap min css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- css style  -->
+    <link rel="stylesheet" href="../public/src/css/style.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand mt-1" href="index.html">
+          <img
+            src="../public/src/img/logo.png"
+            width="50"
+            height="44"
+            class="d-inline-block align-text-top"
+          />
+          -2 de carisma
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="clases.html">Clases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="races.html">Razas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="spells.html">Conjuros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="weapons.html">Armas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- contend -->
+    <div class="container bg-dark text-light my-5 mx-auto p-5">
+      <div class="d-flex justify-content-between align-items-center monster-info d-none">
+        <h1 class="monster-name fs-1"></h1>
+        <a href="monsters.html" class="btn btn-light">Volver</a>
+      </div>
+      <p class="monster-alignment-size-type fst-italic"></p>
+      <hr />
+      <div class="row monster-info d-none">
+        <div class="col-12 col-md-6">
+          <!-- Valor de desafio -->
+          <div class="m-0">
+            <h3 class="fw-bold fs-6 d-inline">Valor de desafio: </h3>
+            <span class="monster-challenge-rating"></span>
+          </div>
+
+          <!-- Clase de armadura -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Clase de armadura: </h3>
+            <p class="monster-armor-class d-inline"></p>
+          </div>
+
+          <!-- Puntos de golpe -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Puntos de golpe: </h3>
+            <p class="monster-hit-points d-inline"></p>
+          </div>
+
+          <!-- Velocidad -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Velocidad: </h3>
+            <p class="monster-speed d-inline"></p>
+          </div>
+
+          <!-- Estadísticas -->
+          <table
+            class="table table-dark table-striped text-center border-top border-light my-4"
+          >
+            <thead>
+              <tr>
+                <th>FUE</th>
+                <th>DES</th>
+                <th>CON</th>
+                <th>INT</th>
+                <th>SAB</th>
+                <th>CAR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="monster-stat-str">1</td>
+                <td class="monster-stat-des">2</td>
+                <td class="monster-stat-con">3</td>
+                <td class="monster-stat-int">4</td>
+                <td class="monster-stat-wis">5</td>
+                <td class="monster-stat-cha">6</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Tiradas de salvación -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Tirada de salvación:</h3>
+            <ul class="px-3">
+              <li>FUE: <span class="monster-str-save"></span></li>
+              <li>DES: <span class="monster-des-save"></span></li>
+              <li>CON: <span class="monster-con-save"></span></li>
+              <li>INT: <span class="monster-int-save"></span></li>
+              <li>SAB: <span class="monster-wis-save"></span></li>
+              <li>CAR: <span class="monster-cha-save"></span></li>
+            </ul>
+          </div>
+
+          <!-- Habilidades -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Habilidades: </h3>
+            <p class="monster-skill d-none d-inline"></p>
+            <ul class="monster-skills-list px-3"></ul>
+          </div>
+
+          <!-- Sentidos -->
+          <div>
+            <h3 class="fw-bold fs-6 d-inline">Sentidos: </h3>
+            <p class="monster-sense d-inline"></p>
+          </div>
+
+          <!-- Lenguajes -->
+          <div class="mt-3">
+            <h3 class="fw-bold fs-6 d-inline">Lenguajes: </h3>
+            <p class="monster-languages d-inline"></p>
+          </div>
+          <hr />
+
+          <!-- Resistencia y vulnerabilidades -->
+          <div class="mt-3">
+            <h3 class="fw-bold fs-5">Resistencia y vulnerabilidades</h3>
+            <div>
+              <h4 class="fw-bold fs-6 d-inline">Resistencia a estados: </h4>
+              <p class="monster-condition-inmunities d-inline"></p>
+            </div>
+            <div>
+              <h4 class="fw-bold fs-6 d-inline">Resistencia a daño: </h4>
+              <p class="monster-damage-resistances d-inline"></p>
+            </div>
+            <div>
+              <h4 class="fw-bold fs-6 d-inline">Inmunidad a daño: </h4>
+              <p class="monster-damage-inmunities d-inline"></p>
+            </div>
+            <div>
+              <h4 class="fw-bold fs-6 d-inline">Vulnerabilidad a daño: </h4>
+              <p class="monster-damage-vulnerability d-inline"></p>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-3 d-md-none">
+        <div class="col-12 col-md-6 mt-3 mt-md-0">
+          <!-- Rasgos -->
+          <div class="special-abilities-container">
+            <h3 class="fw-bold fs-5">Rasgos</h3>
+            <div class="monster-special-abilities"></div>
+          </div>
+          <hr>
+
+          <!-- Acciones -->
+          <div class="actions-container">
+            <h3 class="fw-bold fs-5">Acciones</h3>
+            <div class="monster-actions"></div>
+          </div>
+          <hr>
+          
+          <!-- Reacciones -->
+          <div class="reactions-container">
+            <h3 class="fw-bold fs-5">Reacciones</h3>
+            <div class="monster-reactions"></div>
+          </div>
+
+          <!-- Acciones legendarias -->
+          <div class="legendary-actiones-container">
+            <h3 class="fw-bold fs-5">Acciones legendarias</h3>
+            <p class="fs-6 monster-legendary-desc"></p>
+            <div class="monster-legendary-actions"></div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+      <!--  spinner   -->
+      <div class="spinner d-flex justify-content-center">
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 col-sm-12 col-md-3 mb-4 my-md-0 me-md-5 text-center"
+          >
+            <!-- Documentación de la API -->
+            <span class="fw-bold"
+              >La API que utilizamos fue open5e. Una API que ofrece información
+              sobre D&D</span
+            >
+            <br />
+            <span
+              >Para ir a la documentación
+              <a href="https://open5e.com" target="_blank" class="link-light"
+                >presione aquí</a
+              ></span
+            >
+          </div>
+
+          <!-- Alumnos -->
+          <div class="col-12 col-md-3 my-4 my-md-0 mx-md-5 p-0">
+            <table class="table table-dark table-striped text-center">
+              <thead>
+                <tr>
+                  <th>Alumnos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Mendoza Tomas</th>
+                  <td>
+                    <a
+                      href="https://github.com/leopoldo109/"
+                      target="_blank"
+                      class="link-light"
+                      >Ir al perfil de github</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Díaz Marcos</th>
+                  <td>
+                    <a
+                      href="https://github.com/Markosuuu/"
+                      target="_blank"
+                      class="link-light"
+                      >Ir al perfil de github</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Repositorio del trabajo -->
+          <div
+            class="col-12 col-md-3 my-4 my-md-0 ms-md-5 p-0 text-center text-md-end"
+          >
+            Para ir al repositorio donde se fue controlando esta página puede ir
+            <a
+              href="https://github.com/leopoldo109/-2-de-carisma"
+              target="_blank"
+              class="link-light"
+              >aquí</a
+            >
+            <!-- Repositorio del trabajo -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <!-- boostrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../public/src/js/monsters-info.js"></script>
+  </body>
+</html>

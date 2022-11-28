@@ -16,7 +16,7 @@ previous.addEventListener("click", () => {
     spinner.classList.remove("d-none");
     removeChildNodes(container);
     page--;
-    fetchWeapon(page);
+    fetchWeapon(page, str);
   }
 });
 
@@ -25,45 +25,54 @@ next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
   page++;
-  fetchWeapon(page);
+  fetchWeapon(page, str);
 });
 
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
-  let weaponName = document.getElementById("name-weapon").value;
-  
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  
-  fetchWeapon(page, `search=${weaponName}`);
+  fetchWeapon(page);
 });
+
+let str = ``;
 
 // Botón para ordenar por nombre
 filtroName.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  fetchWeapon(page, "ordering=name");
+  str = "&ordering=name";
+  fetchWeapon(page, str);
 });
 
 // Botón para ordenar por categoria
 filtroCategory.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  fetchWeapon(page, "ordering=category");
+  str = "&ordering=category";
+  fetchWeapon(page, str);
 });
 
 // Botón para ordenar por tipo de daño 
 filtroTypeDamage.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  fetchWeapon(page, "ordering=damage_type");
+  str = "&ordering=damage_type";
+  fetchWeapon(page, str);
 });
 
-function fetchWeapon(pageNumber, strLink) {
-  
-  let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}&${strLink}`;
+function fetchWeapon(pageNumber, str) {
+  let weaponName = document.getElementById("name-weapon").value;
 
-  fetch(enlace)
+  let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}`;
+  
+  if (weaponName !== "") {
+    enlaceFinal = enlace + `&search=${weaponName}`;
+  } else {
+    enlaceFinal = enlace + str;
+  }
+
+  fetch(enlaceFinal)
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < data.results.length; i++) {
@@ -79,10 +88,7 @@ function crearArma(data) {
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12");
-  col.classList.add("col-md-6");
-  col.classList.add("col-lg-4");
-  col.classList.add("mt-2");
+  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
 
   // Link hacía la info de cada arma
   const a = document.createElement("a");
@@ -136,4 +142,4 @@ function removeChildNodes(parent) {
   }
 }
 
-fetchWeapon(page);
+fetchWeapon(page, str);

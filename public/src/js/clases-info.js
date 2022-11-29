@@ -26,8 +26,8 @@ function fetchClases() {
     .then((data) => {
       document.querySelector(".spinner").classList.add("d-none");
       document.querySelector(".back").classList.remove("d-none");
-      document.querySelector(".clase").classList.remove("d-none");
-      document.querySelector(".des").classList.remove("d-none");
+      clase.classList.remove("d-none");
+      des.classList.remove("d-none");
       col1(data.results[id], imagenes.result[id]);
       col2(data.results[id]);
     });
@@ -79,8 +79,19 @@ function col2(data) {
   let equipamientoTab = document.querySelector("#equipamiento-tab-pane");
   
   tablaTab.innerText = data.table;
-  descripcionTab.innerText = data.desc;
-  equipamientoTab.innerText = data.equipment;
+  
+  descripcionTab.innerHTML = data.desc
+  .replace(/\n/g,"<br>")
+  .replace(/###/g, "")
+  .replace(/#/g, "")
+  .replace(/\*\*\ \=/g, "</b> =")
+  .replace(/\*\*/g, "<b>")
+
+  equipamientoTab.innerHTML = data.equipment
+  .replace(/\n/g,"<br>")
+  .replace(/\(\*/g, '(<b>')
+  .replace(/\*\)/g, '</b>)')
+  .replace(/\*/g, "•");
 }
 
 fetchClases();

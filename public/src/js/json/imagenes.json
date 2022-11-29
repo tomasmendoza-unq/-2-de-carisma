@@ -59,6 +59,51 @@
             "id": 11,
             "url": "../public/src/img/mago-icono.png",
             "desc": "Los magos son los practicantes supremos de la magia, definidos y unidos como una clase por los hechizos que conjuran. A partir de la sutil onda de la magia que impregna el cosmos, los magos lanzan explosivos hechizos de fuego, arcos voltaicos, sutiles engaños y brutales formas de control mental."
+        },
+        {
+            "id": 12,
+            "url": "../public/src/img/dwarf.jpg",
+            "desc": ""
+        },
+        {
+            "id": 13,
+            "url": "../public/src/img/elf.jpg",
+            "desc": ""
+        },
+        {
+            "id": 14,
+            "url": "../public/src/img/hafling.jpg",
+            "desc": ""
+        },
+        {
+            "id": 15,
+            "url": "../public/src/img/human.jpg",
+            "desc": ""
+        },
+        {
+            "id": 16,
+            "url": "../public/src/img/dragonborn.jpg",
+            "desc": ""
+        },
+        {
+            "id": 17,
+            "url": "../public/src/img/gnomo.jpg",
+            "desc": ""
+        },
+        {
+            "id": 18,
+            "url": "../public/src/img/half-elf.jpg",
+            "desc": ""
+        },
+        {
+            "id": 19,
+            "url": "../public/src/img/half-orc.jpg",
+            "desc": ""
+        },
+        {
+            "id": 20,
+            "url": "../public/src/img/tiefling.jpg",
+            "desc": ""
         }
     ]
 }

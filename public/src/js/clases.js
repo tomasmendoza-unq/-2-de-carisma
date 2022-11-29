@@ -1,6 +1,4 @@
 let imagenes;
-let spellCasting = document.getElementById("spellcasting");
-const form = document.getElementById("form");
 
 function traerDatos() {
   const xhttp = new XMLHttpRequest();
@@ -17,12 +15,6 @@ function traerDatos() {
 }
 
 traerDatos();
-
-function fetchfor(distancia, limite) {
-  for (let i = distancia; i <= distancia + limite; i++) {
-    fetchClases(i);
-  }
-}
 
 function fetchClases() {
   fetch(`https://api.open5e.com/classes`)
@@ -62,9 +54,6 @@ function dibujarCard(data, imagenes, id) {
   const imagen = document.createElement("img");
   imagen.src = imagenes.url;
   imagen.classList.add("card-img-top");
-
-  const ima = document.createElement("div");
-  ima.classList.add("img-container");
 
   const btn = document.createElement("button");
   btn.classList.add("btn", "informacion", "text-light", `${data.name}`);

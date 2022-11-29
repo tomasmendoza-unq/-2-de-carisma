@@ -51,7 +51,7 @@ function races(data) {
   age.innerText = "Años";
 
   let ageP = document.createElement("p");
-  ageP.innerText = data.age;
+  ageP.innerHTML = data.age.replace("**_", '<b><i>').replace("_**", '</i></b>');
 
   row.appendChild(col);
   col.appendChild(age);
@@ -64,7 +64,7 @@ function races(data) {
   desc.innerText = "Descripcion";
 
   let descP = document.createElement("p");
-  descP.innerText = data.desc;
+  descP.innerHTML = data.desc.replace("##", "");
 
   row.appendChild(col2);
   col2.appendChild(desc);
@@ -77,7 +77,7 @@ function races(data) {
   lenguaje.innerText = "Lenguaje";
 
   let lenguajeP = document.createElement("p");
-  lenguajeP.innerText = data.languages;
+  lenguajeP.innerHTML = data.languages.replace("**_", '<b><i>').replace("_**", '</i></b>');
 
   row.appendChild(col3);
   col3.appendChild(lenguaje);
@@ -90,7 +90,7 @@ function races(data) {
   tamaño.innerText = "Tamaño";
 
   let tamañoP = document.createElement("p");
-  tamañoP.innerText = data.size;
+  tamañoP.innerHTML = data.size.replace("**_", '<b><i>').replace("_**", '</i></b>');
 
   row.appendChild(col4);
   col4.appendChild(tamaño);
@@ -103,7 +103,7 @@ function races(data) {
   velocidad.innerText = "Velocidad";
 
   let velocidadP = document.createElement("p");
-  velocidadP.innerText = data.speed_desc;
+  velocidadP.innerHTML = data.speed_desc.replace("**_", '<b><i>').replace("_**", '</i></b>');
 
   row.appendChild(col5);
   col5.appendChild(velocidad);
@@ -116,7 +116,9 @@ function races(data) {
   habilidad.innerText = "Atributo";
 
   let habilidadP = document.createElement("p");
-  habilidadP.innerText = data.asi_desc;
+  habilidadP.innerHTML = data.asi_desc
+  .replace("**_", '<b><i>')
+  .replace("_**", '</i></b>');
 
   row.appendChild(col6);
   col6.appendChild(habilidad);

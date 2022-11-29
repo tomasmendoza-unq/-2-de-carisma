@@ -78,15 +78,22 @@ function col2(data) {
   let descripcionTab = document.querySelector("#descripcion-tab-pane");
   let equipamientoTab = document.querySelector("#equipamiento-tab-pane");
   
-  tablaTab.innerText = data.table;
+  tablaTab.innerHTML = data.table
+  .replace(/\n/g,"<br>")
+  .replace(/\-\|\-/g, "")
+  .replace(/\-\-/g, "")
+  .replace(/\|\-\|/g, "")
+  .replace(/\|\|/g, "");
   
   descripcionTab.innerHTML = data.desc
   .replace(/\n/g,"<br>")
   .replace(/###/g, "")
   .replace(/#/g, "")
   .replace(/\*\*\ \=/g, "</b> =")
-  .replace(/\*\*/g, "<b>")
-
+  .replace(/\<br\>\*\*/g, "<br> <b>")
+  .replace(/\*\*\ /g, "</b>")  
+  .replace(/\*/g, "•");
+  
   equipamientoTab.innerHTML = data.equipment
   .replace(/\n/g,"<br>")
   .replace(/\(\*/g, '(<b>')
@@ -95,3 +102,7 @@ function col2(data) {
 }
 
 fetchClases();
+
+/**
+ * Llenar tab con proficencies y subclases
+ */

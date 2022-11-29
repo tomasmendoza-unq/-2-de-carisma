@@ -14,8 +14,6 @@ function traerDatos() {
   };
 }
 
-traerDatos();
-
 function fetchClases() {
   fetch(`https://api.open5e.com/classes`)
     .then((res) => res.json())
@@ -55,13 +53,11 @@ function dibujarCard(data, imagenes, id) {
   imagen.src = imagenes.url;
   imagen.classList.add("card-img-top");
 
-  const btn = document.createElement("button");
-  btn.classList.add("btn", "informacion", "text-light", `${data.name}`);
-  btn.innerText = "Mas informacion";
-  btn.setAttribute("data-id", id);
-
   const a = document.createElement("a");
   a.setAttribute("href", "clases-info.html");
+  a.innerText = "Mas informacion";
+  a.classList.add("btn", "informacion", "text-light", `${data.name}`);
+  a.setAttribute("data-id", id);
 
   row.appendChild(col);
   col.appendChild(card);
@@ -69,7 +65,6 @@ function dibujarCard(data, imagenes, id) {
   card.appendChild(cardBody);
   cardBody.appendChild(name);
   cardBody.appendChild(a);
-  a.appendChild(btn);
 
   info();
 }
@@ -87,4 +82,5 @@ function info() {
   });
 }
 
+traerDatos();
 fetchClases();

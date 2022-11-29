@@ -34,17 +34,17 @@ filtro.addEventListener("click", () => {
 
 function fetchMonster(pageNumber) {
   let monsterName = document.getElementById("name-monster").value;
-  let challenge_rating = document.querySelector("#monsters-challenge-rating").value;
+  let challenge_rating = document.querySelector(
+    "#monsters-challenge-rating"
+  ).value;
   let type = document.querySelector("#monsters-type").value;
 
   let enlace = `https://api.open5e.com/monsters/?limit=9&page=${pageNumber}`;
-  
+
   if (monsterName !== "") {
     enlaceFinal = enlace + `&search=${monsterName}`;
   } else {
-    enlaceFinal =
-      enlace +
-      `&challenge_rating=${challenge_rating}&type=${type}`;
+    enlaceFinal = enlace + `&challenge_rating=${challenge_rating}&type=${type}`;
   }
 
   fetch(enlaceFinal)
@@ -63,7 +63,7 @@ function crearMonstruo(data) {
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
+  col.classList.add("col-12", "col-md-6", "col-lg-4", "mt-2");
 
   // Link hacía la info de cada arma
   const a = document.createElement("a");
@@ -72,7 +72,7 @@ function crearMonstruo(data) {
 
   const card = document.createElement("div");
   card.classList.add("card");
-  card.setAttribute("data-slug", data.slug);
+  card.setAttribute("data-name", data.name);
 
   const cardBody = document.createElement("div");
   card.classList.add("card-body", "btn", "btn-light");
@@ -81,7 +81,7 @@ function crearMonstruo(data) {
   name.classList.add("card-text");
   name.classList.add("fs-6");
   name.textContent = `${data.name}`;
-  name.setAttribute("data-slug", data.slug);
+  name.setAttribute("data-name", data.name);
 
   row.appendChild(col);
   col.appendChild(a);
@@ -96,15 +96,15 @@ function info() {
   MonsterInfo = document.querySelectorAll(".monster");
   MonsterInfo.forEach((boton) => {
     boton.addEventListener("click", (e) => {
-      if (localStorage.slug) {
+      if (localStorage.name) {
         localStorage.setItem(
-          "slug",
-          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+          "name",
+          JSON.stringify({ name: `${e.target.dataset.name}` })
         );
       } else {
         localStorage.setItem(
-          "slug",
-          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+          "name",
+          JSON.stringify({ name: `${e.target.dataset.name}` })
         );
       }
     });

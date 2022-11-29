@@ -77,28 +77,28 @@ function col2(data) {
   let tablaTab = document.querySelector("#tabla-tab-pane");
   let descripcionTab = document.querySelector("#descripcion-tab-pane");
   let equipamientoTab = document.querySelector("#equipamiento-tab-pane");
-  
+
   tablaTab.innerHTML = data.table
-  .replace(/\n/g,"<br>")
-  .replace(/\-\|\-/g, "")
-  .replace(/\-\-/g, "")
-  .replace(/\|\-\|/g, "")
-  .replace(/\|\|/g, "");
-  
+    .replace(/\n/g, "<br>")
+    .replace(/\-\|\-/g, "")
+    .replace(/\-\-/g, "")
+    .replace(/\|\-\|/g, "")
+    .replace(/\|\|/g, "");
+
   descripcionTab.innerHTML = data.desc
-  .replace(/\n/g,"<br>")
-  .replace(/###/g, "")
-  .replace(/#/g, "")
-  .replace(/\*\*\ \=/g, "</b> =")
-  .replace(/\<br\>\*\*/g, "<br> <b>")
-  .replace(/\*\*\ /g, "</b>")  
-  .replace(/\*/g, "•");
-  
+    .replace(/\n/g, "<br>")
+    .replace(/###/g, "")
+    .replace(/#/g, "")
+    .replace(/\*\*\ \=/g, "</b> =")
+    .replace(/\<br\>\*\*/g, "<br> <b>")
+    .replace(/\*\*\ /g, "</b>")
+    .replace(/\*/g, "•");
+
   equipamientoTab.innerHTML = data.equipment
-  .replace(/\n/g,"<br>")
-  .replace(/\(\*/g, '(<b>')
-  .replace(/\*\)/g, '</b>)')
-  .replace(/\*/g, "•");
+    .replace(/\n/g, "<br>")
+    .replace(/\(\*/g, "(<b>")
+    .replace(/\*\)/g, "</b>)")
+    .replace(/\*/g, "•");
 }
 
 fetchClases();

@@ -74,151 +74,153 @@
 
     <!-- contend -->
     <div class="container bg-dark text-light my-5 mx-auto p-5">
-      <div class="d-flex justify-content-between align-items-center monster-info d-none">
-        <h1 class="monster-name fs-1"></h1>
-        <a href="monsters.html" class="btn btn-light">Volver</a>
-      </div>
-      <p class="monster-alignment-size-type fst-italic"></p>
-      <hr />
-      <div class="row monster-info d-none">
-        <div class="col-12 col-md-6">
-          <!-- Valor de desafio -->
-          <div class="m-0">
-            <h3 class="fw-bold fs-6 d-inline">Valor de desafio: </h3>
-            <span class="monster-challenge-rating"></span>
-          </div>
-
-          <!-- Clase de armadura -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Clase de armadura: </h3>
-            <p class="monster-armor-class d-inline"></p>
-          </div>
-
-          <!-- Puntos de golpe -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Puntos de golpe: </h3>
-            <p class="monster-hit-points d-inline"></p>
-          </div>
-
-          <!-- Velocidad -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Velocidad: </h3>
-            <p class="monster-speed d-inline"></p>
-          </div>
-
-          <!-- Estadísticas -->
-          <table
-            class="table table-dark table-striped text-center border-top border-light my-4"
-          >
-            <thead>
-              <tr>
-                <th>FUE</th>
-                <th>DES</th>
-                <th>CON</th>
-                <th>INT</th>
-                <th>SAB</th>
-                <th>CAR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="monster-stat-str">1</td>
-                <td class="monster-stat-des">2</td>
-                <td class="monster-stat-con">3</td>
-                <td class="monster-stat-int">4</td>
-                <td class="monster-stat-wis">5</td>
-                <td class="monster-stat-cha">6</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- Tiradas de salvación -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Tirada de salvación:</h3>
-            <ul class="px-3">
-              <li>FUE: <span class="monster-str-save"></span></li>
-              <li>DES: <span class="monster-des-save"></span></li>
-              <li>CON: <span class="monster-con-save"></span></li>
-              <li>INT: <span class="monster-int-save"></span></li>
-              <li>SAB: <span class="monster-wis-save"></span></li>
-              <li>CAR: <span class="monster-cha-save"></span></li>
-            </ul>
-          </div>
-
-          <!-- Habilidades -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Habilidades: </h3>
-            <p class="monster-skill d-none d-inline"></p>
-            <ul class="monster-skills-list px-3"></ul>
-          </div>
-
-          <!-- Sentidos -->
-          <div>
-            <h3 class="fw-bold fs-6 d-inline">Sentidos: </h3>
-            <p class="monster-sense d-inline"></p>
-          </div>
-
-          <!-- Lenguajes -->
-          <div class="mt-3">
-            <h3 class="fw-bold fs-6 d-inline">Lenguajes: </h3>
-            <p class="monster-languages d-inline"></p>
-          </div>
-          <hr />
-
-          <!-- Resistencia y vulnerabilidades -->
-          <div class="mt-3">
-            <h3 class="fw-bold fs-5">Resistencia y vulnerabilidades</h3>
-            <div>
-              <h4 class="fw-bold fs-6 d-inline">Resistencia a estados: </h4>
-              <p class="monster-condition-inmunities d-inline"></p>
-            </div>
-            <div>
-              <h4 class="fw-bold fs-6 d-inline">Resistencia a daño: </h4>
-              <p class="monster-damage-resistances d-inline"></p>
-            </div>
-            <div>
-              <h4 class="fw-bold fs-6 d-inline">Inmunidad a daño: </h4>
-              <p class="monster-damage-inmunities d-inline"></p>
-            </div>
-            <div>
-              <h4 class="fw-bold fs-6 d-inline">Vulnerabilidad a daño: </h4>
-              <p class="monster-damage-vulnerability d-inline"></p>
-            </div>
-          </div>
+      <div class="d-none monster-container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="monster-name fs-1"></h1>
+          <a href="monsters.html" class="btn btn-light">Volver</a>
         </div>
-        <hr class="mt-3 d-md-none">
-        <div class="col-12 col-md-6 mt-3 mt-md-0">
-          <!-- Rasgos -->
-          <div class="special-abilities-container">
-            <h3 class="fw-bold fs-5">Rasgos</h3>
-            <div class="monster-special-abilities"></div>
+        <p class="monster-alignment-size-type fst-italic"></p>
+        <hr />
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <!-- Valor de desafio -->
+            <div class="m-0">
+              <h3 class="fw-bold fs-6 d-inline">Valor de desafio: </h3>
+              <span class="monster-challenge-rating"></span>
+            </div>
+  
+            <!-- Clase de armadura -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Clase de armadura: </h3>
+              <p class="monster-armor-class d-inline"></p>
+            </div>
+  
+            <!-- Puntos de golpe -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Puntos de golpe: </h3>
+              <p class="monster-hit-points d-inline"></p>
+            </div>
+  
+            <!-- Velocidad -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Velocidad: </h3>
+              <p class="monster-speed d-inline"></p>
+            </div>
+  
+            <!-- Estadísticas -->
+            <table
+              class="table table-dark table-striped text-center border-top border-light my-4"
+            >
+              <thead>
+                <tr>
+                  <th>FUE</th>
+                  <th>DES</th>
+                  <th>CON</th>
+                  <th>INT</th>
+                  <th>SAB</th>
+                  <th>CAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="monster-stat-str">1</td>
+                  <td class="monster-stat-des">2</td>
+                  <td class="monster-stat-con">3</td>
+                  <td class="monster-stat-int">4</td>
+                  <td class="monster-stat-wis">5</td>
+                  <td class="monster-stat-cha">6</td>
+                </tr>
+              </tbody>
+            </table>
+  
+            <!-- Tiradas de salvación -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Tirada de salvación:</h3>
+              <ul class="px-3">
+                <li>FUE: <span class="monster-str-save"></span></li>
+                <li>DES: <span class="monster-des-save"></span></li>
+                <li>CON: <span class="monster-con-save"></span></li>
+                <li>INT: <span class="monster-int-save"></span></li>
+                <li>SAB: <span class="monster-wis-save"></span></li>
+                <li>CAR: <span class="monster-cha-save"></span></li>
+              </ul>
+            </div>
+  
+            <!-- Habilidades -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Habilidades: </h3>
+              <p class="monster-skill d-none d-inline"></p>
+              <ul class="monster-skills-list px-3"></ul>
+            </div>
+  
+            <!-- Sentidos -->
+            <div>
+              <h3 class="fw-bold fs-6 d-inline">Sentidos: </h3>
+              <p class="monster-sense d-inline"></p>
+            </div>
+  
+            <!-- Lenguajes -->
+            <div class="mt-3">
+              <h3 class="fw-bold fs-6 d-inline">Lenguajes: </h3>
+              <p class="monster-languages d-inline"></p>
+            </div>
+            <hr />
+  
+            <!-- Resistencia y vulnerabilidades -->
+            <div class="mt-3">
+              <h3 class="fw-bold fs-5">Resistencia y vulnerabilidades</h3>
+              <div>
+                <h4 class="fw-bold fs-6 d-inline">Resistencia a estados: </h4>
+                <p class="monster-condition-inmunities d-inline"></p>
+              </div>
+              <div>
+                <h4 class="fw-bold fs-6 d-inline">Resistencia a daño: </h4>
+                <p class="monster-damage-resistances d-inline"></p>
+              </div>
+              <div>
+                <h4 class="fw-bold fs-6 d-inline">Inmunidad a daño: </h4>
+                <p class="monster-damage-inmunities d-inline"></p>
+              </div>
+              <div>
+                <h4 class="fw-bold fs-6 d-inline">Vulnerabilidad a daño: </h4>
+                <p class="monster-damage-vulnerability d-inline"></p>
+              </div>
+            </div>
           </div>
-          <hr>
-
-          <!-- Acciones -->
-          <div class="actions-container">
-            <h3 class="fw-bold fs-5">Acciones</h3>
-            <div class="monster-actions"></div>
+          <hr class="mt-3 d-md-none">
+          <div class="col-12 col-md-6 mt-3 mt-md-0">
+            <!-- Rasgos -->
+            <div class="special-abilities-container">
+              <h3 class="fw-bold fs-5">Rasgos</h3>
+              <div class="monster-special-abilities"></div>
+            </div>
+            <hr>
+  
+            <!-- Acciones -->
+            <div class="actions-container">
+              <h3 class="fw-bold fs-5">Acciones</h3>
+              <div class="monster-actions"></div>
+            </div>
+            <hr>
+            
+            <!-- Reacciones -->
+            <div class="reactions-container">
+              <h3 class="fw-bold fs-5">Reacciones</h3>
+              <div class="monster-reactions"></div>
+            </div>
+  
+            <!-- Acciones legendarias -->
+            <div class="legendary-actiones-container">
+              <h3 class="fw-bold fs-5">Acciones legendarias</h3>
+              <p class="fs-6 monster-legendary-desc"></p>
+              <div class="monster-legendary-actions"></div>
+            </div>
+  
+  
           </div>
-          <hr>
-          
-          <!-- Reacciones -->
-          <div class="reactions-container">
-            <h3 class="fw-bold fs-5">Reacciones</h3>
-            <div class="monster-reactions"></div>
-          </div>
-
-          <!-- Acciones legendarias -->
-          <div class="legendary-actiones-container">
-            <h3 class="fw-bold fs-5">Acciones legendarias</h3>
-            <p class="fs-6 monster-legendary-desc"></p>
-            <div class="monster-legendary-actions"></div>
-          </div>
-
-
+  
+  
         </div>
-
-
       </div>
       <!--  spinner   -->
       <div class="spinner d-flex justify-content-center">

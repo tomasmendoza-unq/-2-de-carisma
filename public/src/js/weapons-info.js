@@ -56,6 +56,8 @@ function fetchWeapons() {
       } else {
         weaponProperties.textContent = "No tiene propiedades";
       }
+
+      document.querySelector(".weapon-container").classList.remove("d-none");
     });
 }
 

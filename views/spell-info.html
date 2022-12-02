@@ -75,61 +75,70 @@
 
     <!-- contend -->
     <div class="container bg-dark text-light my-5 mx-auto p-5">
-      <div class="d-flex justify-content-between align-items-center">
-        <p class="spell-name fs-1"></p>
-        <a href="spells.html" class="btn btn-light">Volver</a>
+      <div class="spells-container d-none">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="spell-name fs-1"></h1>
+          <a href="spells.html" class="btn btn-light">Volver</a>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Nivel</h2>
+            <p class="fs-5 fst-italic spell-level"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Tiempo de casteo</h2>
+            <p class="fs-5 fst-italic spell-casting-time"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Rango/Área</h2>
+            <p class="fs-5 fst-italic spell-range"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Componentes</h2>
+            <p class="fs-5 fst-italic spell-components"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Duración</h2>
+            <p class="fs-5 fst-italic spell-duration"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Escuela</h2>
+            <p class="fs-5 fst-italic spell-school"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Concentración</h2>
+            <p class="fs-5 fst-italic spell-concentration"></p>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <h2 class="fs-4">Ritual</h2>
+            <p class="fs-5 fst-italic spell-ritual"></p>
+          </div>
+          <div class="col-12 col-md-3 mb-4 spells-classes-container d-none">
+            <h2 class="fs-4">Clases</h2>
+            <p class="fs-5 fst-italic spell-classes"></p>
+          </div>
+          <div class="col-12 col-md-3 mb-4 spells-archetype-container d-none">
+            <h2 class="fs-4">Arquetipos</h2>
+            <p class="fs-5 fst-italic spell-arquetype"></p>
+          </div>
+        </div>
+        <hr />
+        <div class="description fs-5 mb-5">
+          <h2 class="fs-3">Descrición</h2>
+          <p class="fs-6 spell-description"></p>
+        </div>
+  
+        <div class="higher-level fs-5">
+          <h2 class="fs-3">Lanzado a mayor nivel</h2>
+          <p class="fs-6 spell-higher-level"></p>
+        </div>
       </div>
-      <hr />
-      <div class="row">
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Nivel</p>
-          <p class="fs-5 fst-italic spell-level"></p>
+      <!--  spinner   -->
+      <div class="spinner d-flex justify-content-center">
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Tiempo de casteo</p>
-          <p class="fs-5 fst-italic spell-casting-time"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Rango/Área</p>
-          <p class="fs-5 fst-italic spell-range"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Componentes</p>
-          <p class="fs-5 fst-italic spell-components"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Duración</p>
-          <p class="fs-5 fst-italic spell-duration"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Escuela</p>
-          <p class="fs-5 fst-italic spell-school"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Concentración</p>
-          <p class="fs-5 fst-italic spell-concentration"></p>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <p class="fs-4">Ritual</p>
-          <p class="fs-5 fst-italic spell-ritual"></p>
-        </div>
-      </div>
-      <hr />
-      <div class="description fs-5 mb-5">
-        <h2 class="fs-3">Descrición</h2>
-        <p class="fs-6 spell-description"></p>
-      </div>
-
-      <div class="higher-level fs-5">
-        <h2 class="fs-3">Lanzado a mayor nivel</h2>
-        <p class="fs-6 spell-higher-level"></p>
-      </div>
-    </div>
-
-    <!--  spinner   -->
-    <div class="spinner d-flex justify-content-center">
-      <div class="spinner-border text-light" role="status">
-        <span class="visually-hidden">Loading...</span>
       </div>
     </div>
 

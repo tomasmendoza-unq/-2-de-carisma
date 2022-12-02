@@ -77,6 +77,7 @@ function col2(data) {
   let tablaTab = document.querySelector("#tabla-tab-pane");
   let descripcionTab = document.querySelector("#descripcion-tab-pane");
   let equipamientoTab = document.querySelector("#equipamiento-tab-pane");
+  let subclaseTab = document.querySelector("#subclase-tab-pane");
 
   tablaTab.innerHTML = data.table
     .replace(/\n/g, "<br>")
@@ -98,7 +99,21 @@ function col2(data) {
     .replace(/\n/g, "<br>")
     .replace(/\(\*/g, "(<b>")
     .replace(/\*\)/g, "</b>)")
-    .replace(/\*/g, "•");
+    .replace(/\*/g, "•")
+  + '<br><br>' 
+  + 'Armor proficiencies: ' + data.prof_armor + '<br>'
+  + 'Weapons proficiencies: ' + data.prof_weapons + '<br>'
+  + 'Tools proficiencies: ' + data.prof_tools + '<br>'
+  + 'Saving throws proficiencies: ' + data.prof_saving_throws + '<br>'
+  + 'Skills proficiencies: ' + data.prof_skills
+
+  subclaseTab.innerHTML = '<b>' + data.archetypes[0].name + '</b>' + '<br><br>' + data.archetypes[0].desc
+    .replace(/\n/g, "<br>")
+    .replace(/#####/g, "")
+    .replace(/\_\*\*/g, "</i></b>")
+    .replace(/\*\*\_/g, "<b><i>")
+    .replace(/\)\*\*/g, ")</b>")
+    .replace(/\*\*/g, "<b>");
 }
 
 fetchClases();

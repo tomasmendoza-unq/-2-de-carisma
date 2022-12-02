@@ -3,8 +3,6 @@ let name = info.name;
 
 let url = `https://api.open5e.com/monsters/?name=${name}`;
 
-console.log(url);
-
 function fetchMonster() {
   let monsterName = document.querySelector(".monster-name");
   let alignment_size_type = document.querySelector(
@@ -47,7 +45,9 @@ function fetchMonster() {
   let damage_resistances = document.querySelector(
     ".monster-damage-resistances"
   );
-  let damage_immunities = document.querySelector(".monster-damage-inmunities");
+  let damage_immunities = document.querySelector(
+    ".monster-damage-inmunities"
+  );
   let damage_vulnerabilities = document.querySelector(
     ".monster-damage-vulnerability"
   );
@@ -62,8 +62,7 @@ function fetchMonster() {
     .then((res) => res.json())
     .then((data) => {
       document.querySelector(".spinner").classList.add("d-none");
-      console.log(data.results[0]);
-
+      
       monsterName.textContent = data.results[0].name;
 
       alignment_size_type.textContent =
@@ -132,9 +131,11 @@ function fetchMonster() {
         skills.innerText = "No tiene habilidades";
       }
 
+      // Sentidos y lenguajes
       senses.innerText = data.results[0].senses;
       languages.innerText = data.results[0].languages;
 
+      // Resistencias, inmunidades y vulnerabilidades
       data.results[0].condition_immunities == ""
         ? (condition_immunities.innerText = "-")
         : (condition_immunities.innerText =
@@ -235,9 +236,7 @@ function fetchMonster() {
         legendaryActionsContainer.classList.add("d-none");
       }
 
-      monster = document.querySelectorAll(".monster-info");
-      monster[0].classList.remove("d-none");
-      monster[1].classList.remove("d-none");
+      document.querySelector(".monster-container").classList.remove("d-none");
     });
 }
 

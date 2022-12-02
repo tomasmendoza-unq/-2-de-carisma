@@ -7,122 +7,92 @@ function fetchRaces() {
     .then((res) => res.json())
     .then((data) => {
       document.querySelector(".spinner").classList.add("d-none");
-      document.querySelector(".back").classList.remove("d-none");
-      races(data.results[0]);
+      createRaces(data.results[0]);
+      document.querySelector(".race-container").classList.remove("d-none");
     });
 }
 
-function races(data) {
-  let card = document.createElement("div");
-  card.classList.add("card", "bg-dark", "info", "rounded-0");
-  card.style.padding = "20px";
-  card.style.border = "none";
+function createRaces(data) {
+  // Nombre de la raza
+  let race_name = document.querySelector(".race-name");
+  race_name.innerText = data.name;
+  
+  // Descripción de la raza
+  let race_desc = document.querySelector(".desc");
+  race_desc.innerHTML = "<b><i>Description.</i></b> " + data.desc.replace("##", "");
+  
+  // Alineamiento de la raza
+  let race_alignment = document.querySelector(".alignment");
+  race_alignment.innerHTML = data.alignment
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
 
-  let header = document.createElement("div");
-  header.classList.add("card-header");
+  let race_age = document.querySelector(".age");
+  race_age.innerHTML = data.age
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
+  
+  let race_size = document.querySelector(".size");
+  race_size.innerHTML = data.size
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
+  
+  let race_speed = document.querySelector(".speed");
+  race_speed.innerHTML = data.speed_desc
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
+  
+  if (data.vision !== "") {
+    let race_vision = document.querySelector(".vision");
+    race_vision.innerHTML = data.vision
+    .replace(/\*\*\_/g, "<b><i>")
+    .replace(/\_\*\*/g, "</i></b>");
 
-  let textHeader = document.createElement("h4");
-  textHeader.classList.add("card-title");
-  textHeader.innerText = data.name;
+    document.querySelector(".vision-container").classList.remove("d-none");
+  }
+  
+  let race_stat_desc = document.querySelector(".stat-desc");
+  race_stat_desc.innerHTML = data.asi_desc
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
+  
+  let race_languages = document.querySelector(".languages");
+  race_languages.innerHTML = data.languages
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
+  
+  let race_traits = document.querySelector(".traits");
+  race_traits.innerHTML = "<b><i>Traits.</i></b> <br />" + data.traits
+  .replace(/\n/g, "<br />")
+  .replace(/\*\*\_/g, "<b><i>")
+  .replace(/\_\*\*/g, "</i></b>");
 
-  let cardBlock = document.createElement("div");
-  cardBlock.classList.add("card-block", "pt-1");
-  cardBlock.style.padding = "20px";
+  // Información de la subraza, aparece si es que tiene subraza
+  if (data.subraces.length > 0) {
+    let subrace_name = document.querySelector(".subrace-name");
+    subrace_name.innerText = "Subrace: " + data.subraces[0].name;
+  
+    let subrace_desc = document.querySelector(".sub-desc");
+    subrace_desc.innerHTML = "<b><i>Description.</i></b> " + data.subraces[0].desc.replace("##", "").replace(/\n/g, "<br />");
+    
+    let subrace_stat_desc = document.querySelector(".sub-stat-desc");
+    subrace_stat_desc.innerHTML = data.subraces[0].asi_desc
+    .replace(/\*\*\_/g, "<b><i>")
+    .replace(/\_\*\*/g, "</i></b>");
+  
+    let subrace_traits = document.querySelector(".sub-traits");
+    subrace_traits.innerHTML = data.subraces[0].traits
+    .replace(/\n/g, "<br />")
+    .replace(/\*\*\_/g, "<b><i>")
+    .replace(/\_\*\*/g, "</i></b>")
+    .replace(/\.\_/g, "</i>.")
+    .replace(/\*\ \_/g, "* <i>")
+    .replace(/\*/g, "•");
+  
+    document.querySelector(".subrace-container").classList.remove("d-none");
+  }
 
-  let cardText = document.createElement("card-text");
-  cardText.classList.add("card-text");
 
-  container.appendChild(card);
-  card.appendChild(header);
-  header.appendChild(textHeader);
-  card.appendChild(cardBlock);
-
-  // columnas
-
-  let row = document.createElement("div");
-  row.classList.add("row");
-
-  cardBlock.appendChild(row);
-
-  let col = document.createElement("div");
-  col.classList.add("col-12", "col-md-6");
-
-  let age = document.createElement("h6");
-  age.innerText = "Años";
-
-  let ageP = document.createElement("p");
-  ageP.innerHTML = data.age.replace("**_", '<b><i>').replace("_**", '</i></b>');
-
-  row.appendChild(col);
-  col.appendChild(age);
-  col.appendChild(ageP);
-
-  let col2 = document.createElement("div");
-  col2.classList.add("col-12", "col-md-6");
-
-  let desc = document.createElement("h6");
-  desc.innerText = "Descripcion";
-
-  let descP = document.createElement("p");
-  descP.innerHTML = data.desc.replace("##", "");
-
-  row.appendChild(col2);
-  col2.appendChild(desc);
-  col2.appendChild(descP);
-
-  let col3 = document.createElement("div");
-  col3.classList.add("col-12", "col-md-6");
-
-  let lenguaje = document.createElement("h6");
-  lenguaje.innerText = "Lenguaje";
-
-  let lenguajeP = document.createElement("p");
-  lenguajeP.innerHTML = data.languages.replace("**_", '<b><i>').replace("_**", '</i></b>');
-
-  row.appendChild(col3);
-  col3.appendChild(lenguaje);
-  col3.appendChild(lenguajeP);
-
-  let col4 = document.createElement("div");
-  col4.classList.add("col-12", "col-md-6");
-
-  let tamaño = document.createElement("h6");
-  tamaño.innerText = "Tamaño";
-
-  let tamañoP = document.createElement("p");
-  tamañoP.innerHTML = data.size.replace("**_", '<b><i>').replace("_**", '</i></b>');
-
-  row.appendChild(col4);
-  col4.appendChild(tamaño);
-  col4.appendChild(tamañoP);
-
-  let col5 = document.createElement("div");
-  col5.classList.add("col-12", "col-md-6");
-
-  let velocidad = document.createElement("h6");
-  velocidad.innerText = "Velocidad";
-
-  let velocidadP = document.createElement("p");
-  velocidadP.innerHTML = data.speed_desc.replace("**_", '<b><i>').replace("_**", '</i></b>');
-
-  row.appendChild(col5);
-  col5.appendChild(velocidad);
-  col5.appendChild(velocidadP);
-
-  let col6 = document.createElement("div");
-  col6.classList.add("col-12", "col-md-6");
-
-  let habilidad = document.createElement("h6");
-  habilidad.innerText = "Atributo";
-
-  let habilidadP = document.createElement("p");
-  habilidadP.innerHTML = data.asi_desc
-  .replace("**_", '<b><i>')
-  .replace("_**", '</i></b>');
-
-  row.appendChild(col6);
-  col6.appendChild(habilidad);
-  col6.appendChild(habilidadP);
 }
 
 fetchRaces();

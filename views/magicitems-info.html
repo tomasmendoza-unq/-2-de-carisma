@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic Items -2 de carisma</title>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>-2 de carisma</title>
     <!-- icono -->
     <link
       rel="shortcut icon"
@@ -23,8 +22,9 @@
 
     <!-- css style  -->
     <link rel="stylesheet" href="../public/src/css/style.css" />
-</head>
-<body>
+  </head>
+
+  <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -59,6 +59,9 @@
               <a class="nav-link active" href="clases.html">Clases</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" href="races.html">Razas</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" href="spells.html">Conjuros</a>
             </li>
             <li class="nav-item">
@@ -68,76 +71,47 @@
         </div>
       </div>
     </nav>
-    
-    <!-- contend -->
-    <div class="container bg-dark my-5 p-4">
-      <!-- Filtros -->
-      <div class="row">
-        <div class="col-12 col-md-3 mb-2">
-          <div class="input-group mb-3">
-            <span class="input-group-text" for="magicitem-name">Nombre</span>
-            <input type="text" class="form-control" id="magicitem-name" />
-          </div>
-        </div>
-        <!-- Tipo nombre -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light order-name">Ordenar por nombre</button>
-        </div>
-        <!-- Tipo del arma -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light order-rarity">
-            Ordenar por rareza
-          </button>
-        </div>
-        <!-- Tipo de daño -->
-        <div class="col-12 col-md-3 mb-4 text-md-center">
-          <button class="btn btn-light order-type">
-            Ordenar por tipo
-          </button>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary search" type="submit">
-            Buscar objeto mágico
-          </button>
-        </div>
-      </div>
-      <!-- Filtros fin -->
-      <hr style="color: grey" />
-      <br />
 
-      <!-- Load Spinner -->
+    <!-- Content -->
+    <div class="container bg-dark text-light my-5 mx-auto p-5">
+      <div class="d-none magicitem-container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="magicitem-name fs-1"></h1>
+          <a href="magicitems.html" class="btn btn-light">Volver</a>
+        </div>
+        <hr />
+        <div class="d-flex justify-content-center align-items-center">
+          <h2 class="magicitem-rarity pe-5"></h2>
+          <h2 class="magicitem-attunement"></h2>
+        </div>
+        <div class="magicitem-desc fs-4 mt-4 px-0 px-md-5 text-center"></div>
+
+
+
+
+
+      </div>
+      
+      <!--  spinner   -->
       <div class="spinner d-flex justify-content-center">
         <div class="spinner-border text-light" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
 
-      <!-- Armas -->
-      <div class="row magic-items"></div>
-
-      <!-- paginación -->
-      <nav class="pagination mt-5" aria-label="...">
-        <ul class="pagination">
-          <li class="page-item" id="previous">
-            <a class="page-link" href="#" tabindex="-1">Anterior</a>
-          </li>
-          <li class="page-item" id="next">
-            <a class="page-link" href="#">Siguiente</a>
-          </li>
-        </ul>
-      </nav>
     </div>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-light mt-5 p-4">
-        <div class="row justify-content-center align-items-center">
+    <footer class="footer bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
           <div
-            class="col-12 col-md-3 mb-4 my-md-0 me-md-5 p-0 text-center text-md-start"
+            class="col-12 col-sm-12 col-md-3 mb-4 my-md-0 me-md-5 text-center"
           >
             <!-- Documentación de la API -->
-            <span
+            <span class="fw-bold"
               >La API que utilizamos fue open5e. Una API que ofrece información
-              sobre D&D.</span
+              sobre D&D</span
             >
             <br />
             <span
@@ -147,7 +121,7 @@
               ></span
             >
           </div>
-  
+
           <!-- Alumnos -->
           <div class="col-12 col-md-3 my-4 my-md-0 mx-md-5 p-0">
             <table class="table table-dark table-striped text-center">
@@ -182,7 +156,7 @@
               </tbody>
             </table>
           </div>
-  
+
           <!-- Repositorio del trabajo -->
           <div
             class="col-12 col-md-3 my-4 my-md-0 ms-md-5 p-0 text-center text-md-end"
@@ -194,18 +168,21 @@
               class="link-light"
               >aquí</a
             >
+            <!-- Repositorio del trabajo -->
           </div>
         </div>
-      </footer>
-  
-      <!-- Scripts -->
-      <script src="../public/src/js/magicitems.js"></script>
-  
-      <!-- boostrap script -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"
-      ></script>
-</body>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <!-- boostrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../public/src/js/magicitems-info.js"></script>
+  </body>
 </html>

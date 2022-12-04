@@ -1,14 +1,16 @@
-const container = document.querySelector(".weapons");
+const container = document.querySelector(".magic-items");
 const spinner = document.querySelector(".spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 
-const filtro = document.querySelector(".filtro");
-const filtroName = document.querySelector(".filtro-name");
-const filtroCategory = document.querySelector(".filtro-category");
-const filtroTypeDamage = document.querySelector(".filtro-type-damage");
+const search = document.querySelector(".search");
+
+const orderName = document.querySelector(".order-name");
+const orderRarity = document.querySelector(".order-rarity");
+const orderType = document.querySelector(".order-type");
 
 let page = 1;
+let finalPage = null;
 let str = ``;
 
 // Botón para retroceder el listado
@@ -17,7 +19,7 @@ previous.addEventListener("click", () => {
     spinner.classList.remove("d-none");
     removeChildNodes(container);
     page--;
-    fetchWeapon(page, str);
+    fetchMagicItem(page, str);
   }
 });
 
@@ -26,47 +28,45 @@ next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
   page++;
-  fetchWeapon(page, str);
+  fetchMagicItem(page, str);
 });
 
-// Botón para aplicar los filtros
-filtro.addEventListener("click", () => {
+// Botón para realizar las busquedas
+search.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  fetchWeapon(page);
+  fetchMagicItem(page, str);
 });
 
-// Botón para ordenar por nombre
-filtroName.addEventListener("click", () => {
+orderName.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
   str = "&ordering=name";
-  fetchWeapon(page, str);
+  fetchMagicItem(page, str);
 });
 
-// Botón para ordenar por categoria
-filtroCategory.addEventListener("click", () => {
+orderRarity.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  str = "&ordering=category";
-  fetchWeapon(page, str);
+  str = "&ordering=rarity";
+  fetchMagicItem(page, str);
 });
 
-// Botón para ordenar por tipo de daño 
-filtroTypeDamage.addEventListener("click", () => {
+orderType.addEventListener("click", () => {
   spinner.classList.remove("d-none");
   removeChildNodes(container);
-  str = "&ordering=damage_type";
-  fetchWeapon(page, str);
+  str = "&ordering=type";
+  fetchMagicItem(page, str);
 });
 
-function fetchWeapon(pageNumber, str) {
-  let weaponName = document.getElementById("name-weapon").value;
 
-  let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}`;
+function fetchMagicItem(pageNumber, str) {
+  let magicItemName = document.querySelector("#magicitem-name").value;
+
+  let enlace = `https://api.open5e.com/magicitems/?limit=9&page=${pageNumber}`;
   
-  if (weaponName !== "") {
-    enlaceFinal = enlace + `&search=${weaponName}`;
+  if (magicItemName !== "") {
+    enlaceFinal = enlace + `&search=${magicItemName}`;
   } else {
     enlaceFinal = enlace + str;
   }
@@ -75,28 +75,28 @@ function fetchWeapon(pageNumber, str) {
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < data.results.length; i++) {
-        crearArma(data.results[i]);
+        crearItemMagico(data.results[i]);
         spinner.classList.add("d-none");
       }
     });
 }
 
 // Función para crear las tarjetas con los nombres del arma
-function crearArma(data) {
-  const row = document.querySelector(".weapons");
+function crearItemMagico(data) {
+  const row = document.querySelector(".magic-items");
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
+  col.classList.add("col-12", "col-md-6", "col-lg-4", "mt-2");
 
   // Link hacía la info de cada arma
   const a = document.createElement("a");
-  a.classList.add("text-decoration-none", "link-dark", "weapon");
-  a.setAttribute("href", "weapons-info.html");
+  a.classList.add("text-decoration-none", "link-dark", "item-magico");
+  a.setAttribute("href", "magicitems-info.html");
 
   const card = document.createElement("div");
   card.classList.add("card");
-  card.setAttribute("data-slug", data.slug);
+  card.setAttribute("data-name", data.name);
 
   const cardBody = document.createElement("div");
   card.classList.add("card-body", "btn", "btn-light");
@@ -105,7 +105,7 @@ function crearArma(data) {
   name.classList.add("card-text");
   name.classList.add("fs-6");
   name.textContent = `${data.name}`;
-  name.setAttribute("data-slug", data.slug);
+  name.setAttribute("data-name", data.name);
 
   row.appendChild(col);
   col.appendChild(a);
@@ -117,18 +117,18 @@ function crearArma(data) {
 }
 
 function info() {
-  WeaponInfo = document.querySelectorAll(".weapon");
-  WeaponInfo.forEach((boton) => {
+  MagicItemInfo = document.querySelectorAll(".item-magico");
+  MagicItemInfo.forEach((boton) => {
     boton.addEventListener("click", (e) => {
-      if (localStorage.slug) {
+      if (localStorage.name) {
         localStorage.setItem(
-          "slug",
-          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+          "name",
+          JSON.stringify({ name: `${e.target.dataset.name}` })
         );
       } else {
         localStorage.setItem(
-          "slug",
-          JSON.stringify({ slug: `${e.target.dataset.slug}` })
+          "name",
+          JSON.stringify({ name: `${e.target.dataset.name}` })
         );
       }
     });
@@ -137,8 +137,8 @@ function info() {
 
 function removeChildNodes(parent) {
   while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+      parent.removeChild(parent.firstChild);
   }
 }
 
-fetchWeapon(page, str);
+fetchMagicItem(page, str);

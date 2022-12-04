@@ -241,8 +241,3 @@ function fetchMonster() {
 }
 
 fetchMonster();
-
-/**
- * Principal problema de esta página es que no puede tomar los datos
- * slug de los monstruos que en su name tengan un "-" o una ","
- */

@@ -1,7 +1,8 @@
 const container = document.querySelector(".monsters");
-const spinner = document.querySelector(".spinner");
+const spinner = document.querySelector(".contenedor");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
+const load = document.querySelector(".load");
 
 const filtro = document.querySelector(".filtro");
 
@@ -11,6 +12,8 @@ let page = 1;
 previous.addEventListener("click", () => {
   if (page !== 1) {
     spinner.classList.remove("d-none");
+    load.classList.remove("d-none");
+
     removeChildNodes(container);
     page--;
     fetchMonster(page);
@@ -20,6 +23,7 @@ previous.addEventListener("click", () => {
 // Botón para avanzar el listado
 next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
   removeChildNodes(container);
   page++;
   fetchMonster(page);
@@ -28,6 +32,8 @@ next.addEventListener("click", () => {
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   fetchMonster(page);
 });
@@ -53,6 +59,7 @@ function fetchMonster(pageNumber) {
       for (let i = 0; i < data.results.length; i++) {
         crearMonstruo(data.results[i]);
         spinner.classList.add("d-none");
+        load.classList.add("d-none");
       }
     });
 }

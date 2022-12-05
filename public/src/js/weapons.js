@@ -1,5 +1,7 @@
 const container = document.querySelector(".weapons");
-const spinner = document.querySelector(".spinner");
+const spinner = document.querySelector(".contenedor");
+const load = document.querySelector(".load");
+
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 
@@ -15,6 +17,8 @@ let str = ``;
 previous.addEventListener("click", () => {
   if (page !== 1) {
     spinner.classList.remove("d-none");
+    load.classList.remove("d-none");
+
     removeChildNodes(container);
     page--;
     fetchWeapon(page, str);
@@ -24,6 +28,7 @@ previous.addEventListener("click", () => {
 // Botón para avanzar el listado
 next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
   removeChildNodes(container);
   page++;
   fetchWeapon(page, str);
@@ -32,6 +37,8 @@ next.addEventListener("click", () => {
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   fetchWeapon(page);
 });
@@ -39,6 +46,8 @@ filtro.addEventListener("click", () => {
 // Botón para ordenar por nombre
 filtroName.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=name";
   fetchWeapon(page, str);
@@ -47,14 +56,18 @@ filtroName.addEventListener("click", () => {
 // Botón para ordenar por categoria
 filtroCategory.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=category";
   fetchWeapon(page, str);
 });
 
-// Botón para ordenar por tipo de daño 
+// Botón para ordenar por tipo de daño
 filtroTypeDamage.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=damage_type";
   fetchWeapon(page, str);
@@ -64,7 +77,7 @@ function fetchWeapon(pageNumber, str) {
   let weaponName = document.getElementById("name-weapon").value;
 
   let enlace = `https://api.open5e.com/weapons/?limit=9&page=${pageNumber}`;
-  
+
   if (weaponName !== "") {
     enlaceFinal = enlace + `&search=${weaponName}`;
   } else {
@@ -77,6 +90,7 @@ function fetchWeapon(pageNumber, str) {
       for (let i = 0; i < data.results.length; i++) {
         crearArma(data.results[i]);
         spinner.classList.add("d-none");
+        load.classList.add("d-none");
       }
     });
 }
@@ -87,7 +101,7 @@ function crearArma(data) {
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
+  col.classList.add("col-12", "col-md-6", "col-lg-4", "mt-2");
 
   // Link hacía la info de cada arma
   const a = document.createElement("a");

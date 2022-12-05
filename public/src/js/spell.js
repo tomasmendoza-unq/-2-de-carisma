@@ -1,5 +1,8 @@
 const container = document.querySelector(".spells");
-const spinner = document.querySelector(".spinner");
+const spinner = document.querySelector(".contenedor");
+
+const load = document.querySelector(".load");
+
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 
@@ -11,6 +14,8 @@ let page = 1;
 previous.addEventListener("click", () => {
   if (page !== 1) {
     spinner.classList.remove("d-none");
+    load.classList.remove("load");
+
     removeChildNodes(container);
     page--;
     fetchSpell(page);
@@ -20,6 +25,8 @@ previous.addEventListener("click", () => {
 // Botón para avanzar el listado
 next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("load");
+
   removeChildNodes(container);
   page++;
   fetchSpell(page);
@@ -28,6 +35,8 @@ next.addEventListener("click", () => {
 // Botón para aplicar los filtros
 filtro.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("load");
+
   removeChildNodes(container);
   fetchSpell(page);
 });
@@ -54,6 +63,7 @@ function fetchSpell(pageNumber) {
       for (let i = 0; i < data.results.length; i++) {
         crearSpell(data.results[i]);
         spinner.classList.add("d-none");
+        load.classList.add("load");
       }
     });
 }
@@ -64,7 +74,7 @@ function crearSpell(data) {
 
   // Columnas
   const col = document.createElement("div");
-  col.classList.add("col-12","col-md-6","col-lg-4","mt-2");
+  col.classList.add("col-12", "col-md-6", "col-lg-4", "mt-2");
 
   // Link hacía la info de cada conjuro
   const a = document.createElement("a");

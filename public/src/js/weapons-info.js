@@ -38,7 +38,8 @@ function fetchWeapons() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      document.querySelector(".spinner").classList.add("d-none");
+      document.querySelector(".contenedor").classList.add("d-none");
+      document.querySelector(".load").classList.add("d-none");
 
       weaponName.textContent = data.results[0].name;
       weaponCategory.textContent = data.results[0].category;

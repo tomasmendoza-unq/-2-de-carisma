@@ -18,8 +18,9 @@ function fetchClases() {
   fetch(`https://api.open5e.com/classes`)
     .then((res) => res.json())
     .then((data) => {
-      document.querySelector(".spinner").classList.add("d-none");
-      for(let i = 0; i < data.results.length; i++){
+      document.querySelector(".contenedor").classList.add("d-none");
+      document.querySelector(".load").classList.add("d-none");
+      for (let i = 0; i < data.results.length; i++) {
         dibujarCard(data.results[i], imagenes.result[i], i);
       }
     });

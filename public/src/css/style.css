@@ -26,7 +26,7 @@ body {
   height: 120px;
   background-color: rgb(49, 49, 49);
   border: 5px rgb(77, 77, 77) solid;
-  padding: 10px 30px 0;
+  padding: 10px 30px 110px;
 }
 
 .cuadro:hover {
@@ -68,73 +68,81 @@ body {
 }
 
 .Barbarian {
-  background-color: #F22B0C;
+  background-color: #f22b0c;
   border: none;
 }
 
 .Barbarian:hover {
-  background-color: #cf250a;
+  background-color: #881706;
+  transition: background-color 0.4s;
 }
 
 .Bard {
-  background-color: #8C20BA;
+  background-color: #8c20ba;
   border: none;
 }
 
 .Bard:hover {
   background-color: #751b9b;
+  transition: background-color 0.4s;
 }
 
 .Cleric {
-  background-color: #5CD5FF;
+  background-color: #5cd5ff;
 }
 
 .Cleric:hover {
   background-color: #4baccc;
+  transition: background-color 0.4s;
 }
 
 .Druid {
-  background-color: #27BB58;
+  background-color: #27bb58;
   border: none;
 }
 
 .Druid:hover {
   background-color: #21a04c;
+  transition: background-color 0.4s;
 }
 
 .Fighter {
-  background-color: #FF982A;
+  background-color: #ff982a;
   border: none;
 }
 
 .Fighter:hover {
   background-color: #d88124;
+  transition: background-color 0.4s;
 }
 
 .Monk {
-  background-color: #06446C;
+  background-color: #06446c;
 }
 
 .Monk:hover {
   background-color: #053555;
+  transition: background-color 0.4s;
 }
 
 .Paladin {
-  background-color: #FFE570;
+  background-color: #e0cc6f;
   border: none;
 }
 
 .Paladin:hover {
-  background-color: #e0cc6f;
+  background-color: #bbaa62;
+  transition: background-color 0.4s;
 }
 
 .Ranger {
-  background-color: #0D6129;
+  background-color: #0d6129;
   border: none;
 }
 
 .Ranger:hover {
   background-color: #0a4e21;
+  transition: background-color 0.4s;
 }
 
 .Rogue {
@@ -144,33 +152,37 @@ body {
 
 .Rogue:hover {
   background-color: #3f3f3f;
+  transition: background-color 0.4s;
 }
 
 .Sorcerer {
-  background-color: #FF7D00;
+  background-color: #ff7d00;
   border: none;
 }
 
 .Sorcerer:hover {
   background-color: #e46e00;
+  transition: background-color 0.4s;
 }
 
 .Warlock {
-  background-color: #5D147C;
+  background-color: #5d147c;
   border: none;
 }
 
 .Warlock:hover {
   background-color: #53126e;
+  transition: background-color 0.4s;
 }
 
 .Wizard {
-  background-color: #1FA9FF;
+  background-color: #1fa9ff;
   border: none;
 }
 
 .Wizard:hover {
   background-color: #1a8ed6;
+  transition: background-color 0.4s;
 }
 
 /* Clases info */
@@ -202,7 +214,7 @@ body {
   border-top-right-radius: var(--bs-nav-tabs-border-radius);
 }
 
-.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   color: #a6a68c;
   background-color: rgb(65, 65, 65);
@@ -210,12 +222,12 @@ body {
   border-bottom: 1px white solid;
 }
 
-.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
   border-color: #a6a68c;
 }
 
-.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   background-color: none;
   color: #000;
@@ -239,4 +251,176 @@ body {
 option {
   background-color: #373737;
   color: white;
+}
+
+/* generador */
+
+.btn-generar {
+  background-color: #8a1818;
+  color: white;
+}
+
+.btn-generar:hover {
+  background-color: #450b0b;
+  transition: background-color 0.4s;
+  color: white;
+}
+
+/* dado laoder */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.dado {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateY(185deg) rotateX(150deg) rotateZ(315deg);
+  animation: rotate 5s linear infinite;
+}
+
+.lado {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  background-color: #fe0303;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: rgb 15s infinite;
+  animation: rgb 15s infinite;
+}
+
+.load {
+  color: #fe0303;
+  -webkit-animation: random 15s infinite;
+  animation: random 15s infinite;
+}
+
+@keyframes random {
+  15% {
+    color: #ff9d00;
+  }
+  30% {
+    color: #eeff00;
+  }
+  45% {
+    color: #59ff00;
+  }
+  60% {
+    color: #00e3f7;
+  }
+  75% {
+    color: #0331fe;
+  }
+  90% {
+    color: #fe03f6;
+  }
+  100% {
+    color: #fe0303;
+  }
+}
+
+@keyframes rgb {
+  15% {
+    background-color: #ff9d00;
+    color: #ff9d00;
+  }
+  30% {
+    background-color: #eeff00;
+    color: #eeff00;
+  }
+  45% {
+    background-color: #59ff00;
+    color: #59ff00;
+  }
+  60% {
+    background-color: #00e3f7;
+    color: #00e3f7;
+  }
+  75% {
+    background-color: #0331fe;
+    color: #0331fe;
+  }
+  90% {
+    background-color: #fe03f6;
+    color: #fe03f6;
+  }
+  100% {
+    background-color: #fe0303;
+    color: #fe0303;
+  }
+}
+
+.lado:before {
+  content: "";
+  width: 20%;
+  height: 20%;
+  background: black;
+  border-radius: 50%;
+}
+
+.uno {
+  transform: translateZ(50px);
+}
+
+.dos {
+  transform: translateX(-50px) rotateY(-90deg);
+}
+
+.dos:before {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: #000 -35px -35px 0px 0px, #000 35px 35px 0px 0px;
+}
+
+.tres {
+  transform: translateY(50px) rotateX(90deg);
+}
+
+.tres:before {
+  box-shadow: #000 -35px -35px 0px 0px, #000 35px 35px 0px 0px;
+}
+
+.cuatro {
+  transform: translateY(-50px) rotateX(90deg);
+}
+
+.cuatro:before {
+  box-shadow: #000 -35px 35px 0px 0px, #000 -35px -35px 0px 0px,
+    #000 35px 35px 0px 0px, #000 35px -35px 0px 0px;
+}
+
+.cinco {
+  transform: translateX(50px) rotateY(90deg);
+}
+
+.cinco:before {
+  box-shadow: #000 -35px -35px 0px 0px, #000 -35px 35px 0px 0px,
+    #000 35px -35px 0px 0px, #000 35px 35px 0px 0px;
+}
+
+.seis {
+  transform: translateZ(-50px);
+}
+
+.seis:before {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: #000 -35px -35px 0px 0px, #000 -35px 0px 0px 0px,
+    #000 -35px 35px 0px 0px, #000 35px -35px 0px 0px, #000 35px 0px 0px 0px,
+    #000 35px 35px 0px 0px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0) rotateX(30deg) rotateZ(30deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(30deg) rotateZ(30deg);
+  }
 }

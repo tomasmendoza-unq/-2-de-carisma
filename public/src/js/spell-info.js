@@ -20,14 +20,17 @@ function fetchSpells() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      document.querySelector(".spinner").classList.add("d-none");
+      document.querySelector(".contenedor").classList.add("d-none");
+      document.querySelector(".load").classList.add("d-none");
+
       spell_Name.textContent = data.results[0].name;
       spell_Level.textContent = data.results[0].level;
       spell_Casting_Time.textContent = data.results[0].casting_time;
       spell_Range.textContent = data.results[0].range;
 
       if (data.results[0].material !== "") {
-        spell_Components.textContent = data.results[0].components + ' (' + data.results[0].material + ')';
+        spell_Components.textContent =
+          data.results[0].components + " (" + data.results[0].material + ")";
       } else {
         spell_Components.textContent = data.results[0].components;
       }
@@ -36,25 +39,28 @@ function fetchSpells() {
       spell_School.textContent = data.results[0].school;
       spell_Concentration.textContent = data.results[0].concentration;
       spell_Ritual.textContent = data.results[0].ritual;
-      
-      
+
       if (data.results[0].dnd_class !== "") {
-        document.querySelector(".spells-classes-container").classList.remove("d-none");
+        document
+          .querySelector(".spells-classes-container")
+          .classList.remove("d-none");
         spell_Classes.textContent = data.results[0].dnd_class;
       }
 
       if (data.results[0].archetype !== "") {
-        document.querySelector(".spells-archetype-container").classList.remove("d-none");
+        document
+          .querySelector(".spells-archetype-container")
+          .classList.remove("d-none");
         spell_Archetype.textContent = data.results[0].archetype;
       }
 
       spell_Description.innerHTML = data.results[0].desc
-      .replace(/\n/g, "<br>")
-      .replace(/\.\*\*/g, ".</b>")
-      .replace(/\*\*/g, "<b>");
-      
+        .replace(/\n/g, "<br>")
+        .replace(/\.\*\*/g, ".</b>")
+        .replace(/\*\*/g, "<b>");
+
       spell_Higher_Level.textContent = data.results[0].higher_level;
-      
+
       document.querySelector(".spells-container").classList.remove("d-none");
     });
 }

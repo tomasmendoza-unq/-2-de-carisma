@@ -45,9 +45,7 @@ function fetchMonster() {
   let damage_resistances = document.querySelector(
     ".monster-damage-resistances"
   );
-  let damage_immunities = document.querySelector(
-    ".monster-damage-inmunities"
-  );
+  let damage_immunities = document.querySelector(".monster-damage-inmunities");
   let damage_vulnerabilities = document.querySelector(
     ".monster-damage-vulnerability"
   );
@@ -61,8 +59,9 @@ function fetchMonster() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      document.querySelector(".spinner").classList.add("d-none");
-      
+      document.querySelector(".contenedor").classList.add("d-none");
+      document.querySelector(".load").classList.add("d-none");
+
       monsterName.textContent = data.results[0].name;
 
       alignment_size_type.textContent =

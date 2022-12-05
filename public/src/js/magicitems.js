@@ -1,5 +1,6 @@
 const container = document.querySelector(".magic-items");
-const spinner = document.querySelector(".spinner");
+const spinner = document.querySelector(".contenedor");
+const load = document.querySelector(".load");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 
@@ -17,6 +18,7 @@ let str = ``;
 previous.addEventListener("click", () => {
   if (page !== 1) {
     spinner.classList.remove("d-none");
+    load.classList.remove("d-none");
     removeChildNodes(container);
     page--;
     fetchMagicItem(page, str);
@@ -26,6 +28,8 @@ previous.addEventListener("click", () => {
 // Botón para avanzar el listado
 next.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   page++;
   fetchMagicItem(page, str);
@@ -34,12 +38,16 @@ next.addEventListener("click", () => {
 // Botón para realizar las busquedas
 search.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   fetchMagicItem(page, str);
 });
 
 orderName.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=name";
   fetchMagicItem(page, str);
@@ -47,6 +55,8 @@ orderName.addEventListener("click", () => {
 
 orderRarity.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=rarity";
   fetchMagicItem(page, str);
@@ -54,17 +64,18 @@ orderRarity.addEventListener("click", () => {
 
 orderType.addEventListener("click", () => {
   spinner.classList.remove("d-none");
+  load.classList.remove("d-none");
+
   removeChildNodes(container);
   str = "&ordering=type";
   fetchMagicItem(page, str);
 });
 
-
 function fetchMagicItem(pageNumber, str) {
   let magicItemName = document.querySelector("#magicitem-name").value;
 
   let enlace = `https://api.open5e.com/magicitems/?limit=9&page=${pageNumber}`;
-  
+
   if (magicItemName !== "") {
     enlaceFinal = enlace + `&search=${magicItemName}`;
   } else {
@@ -77,6 +88,7 @@ function fetchMagicItem(pageNumber, str) {
       for (let i = 0; i < data.results.length; i++) {
         crearItemMagico(data.results[i]);
         spinner.classList.add("d-none");
+        load.classList.add("d-none");
       }
     });
 }
@@ -137,7 +149,7 @@ function info() {
 
 function removeChildNodes(parent) {
   while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+    parent.removeChild(parent.firstChild);
   }
 }
 
